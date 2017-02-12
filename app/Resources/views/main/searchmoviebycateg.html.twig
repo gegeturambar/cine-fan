@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <table class="table table-striped table-inverse">
+        <thead class="thead-default">
+        <tr>
+            <th>Nom</th>
+            <th>Date de sortie</th>
+            <th>Image</th>
+            <th>Catégorie</th>
+            <th>Alias</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for movie in movies %}
+            <tr>
+                <td>
+                    <a href="{{url('main.movie.detail', {'id' : movie.id, 'slug' : movie.slug , 'category' : movie.category.slug })}}">
+                        {{ movie.title }}
+                    </a>
+                </td>
+
+                <td>
+                    {{ movie.releaseDate | date('d/m/Y') }}
+                </td>
+
+                <td>
+                    <img width="100" height="150" src="/upload/movie/{{ movie.picture }}" />
+                </td>
+                <td>
+                    {{ movie.category.name }}
+                </td>
+                <td>
+                    {{ movie.slug }}
+                </td>
+                <td>
+                    <a href="{{url('app.admin.movie.form.update', {'id' : movie.id })}}" type="button" class="btn btn-primary">{{ 'Modifier' | trans }}</a>
+                    <a href="{{url('app.admin.movie.delete', {'id' : movie.id })}}" type="button" class="btn btn-danger">{{ 'Supprimer' | trans }}</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <div class="navigation text-center">
+        {{ knp_pagination_render(movies) }}
+    </div>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

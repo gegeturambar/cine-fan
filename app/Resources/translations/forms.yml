@@ -1,0 +1,8 @@
+form:
+    movie:
+        update: "Modifier"
+        create: "Créer"
+
+
+
+je n'ai pas eu le temps d'activer les locales pour rendre le site bilingue. MAIS je sais comment faire...

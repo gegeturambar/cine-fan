@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <p>En cliquant sur le lien, on a bien une liste de film avec pagination :)</p>
+<ul class="list-group categories">
+    {% for category in categ %}
+    <li class="list-group-item">
+        <a href="{{ url('app.main.searchmoviebycateg', {'id' : category.id })}}"> {{ category.name }} - {{ category.slug }}</a>
+        <span class="pull-right">
+            <a href="{{url('app.admin.category.form.update', {'id' : category.id })}}" type="button" class="btn btn-primary">{{ 'Edtion' | trans }}</a>
+            <a href="{{url('app.admin.category.delete', {'id' : category.id })}}" type="button" class="btn btn-danger">{{ 'Supprimer' | trans }}</a>
+        </span>
+    </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

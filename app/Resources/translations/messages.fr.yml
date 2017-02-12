@@ -1,0 +1,8 @@
+form:
+    movie:
+        formulaire: Formulaire d'ajout de film :) pour avoir un aussi beau rendu : il faut changer le form_themes en config par "bootstrap_3_layout.html.twig"
+
+
+
+
+je n'ai pas eu le temps d'activer les locales pour rendre le site bilingue. MAIS je sais comment faire...
