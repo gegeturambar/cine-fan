@@ -1,4 +1,4 @@
-L'envoi d'email ne marche plus : le SMTP utilisé était celui de PULSAR INFORMATIQUE, je ne peux pas divulguer les codes. Par contre, en regardant le code, 
+L'envoi d'email ne marche plus : je ne peux pas divulguer les codes SMTP - c'est celui que j'utilise pour mes sites en prod. Par contre, en regardant le code, 
 vous verrez que l'envoi d'email était fonctionnel (dans le service MovieHandler)
 
 Pensez à faire un composer update pour récupérer le bundle de pagination KnpPaginator
