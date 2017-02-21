@@ -78,7 +78,10 @@ class Movie
      */
     private $category;
 
-
+    /**
+     * @ORM\ManyToMany(targetEntity="Actor", mappedBy="movies")
+     */
+    private $actors;
 
     /**
      * Get id
@@ -232,5 +235,49 @@ class Movie
     {
         return $this->category;
     }
+
+
+
+
+    public function __construct()
+    {
+        $this->actors = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add actor
+     *
+     * @param \AppBundle\Entity\Actor $actor
+     *
+     * @return Movie
+     */
+    public function addActor(\AppBundle\Entity\Actor $actor)
+    {
+        $this->actors[] = $actor;
+
+        return $this;
+    }
+
+    /**
+     * Remove actor
+     *
+     * @param \AppBundle\Entity\Actor $actor
+     */
+    public function removeActor(\AppBundle\Entity\Actor $actor)
+    {
+        $this->actors->removeElement($actor);
+    }
+
+    /**
+     * Get actors
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getActors()
+    {
+        return $this->actors;
+    }
+
+
 }
 

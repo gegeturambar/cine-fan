@@ -27,7 +27,6 @@ class MovieType extends AbstractType
             ])
             ->add('category', EntityType::class, [
                 "class" => "AppBundle\Entity\Category",
-                "placeholder" => 'labelcategorylist',
                 "choice_label" => 'name',
                 "expanded"    => true,
                 "multiple"      => false //checkbox

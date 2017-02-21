@@ -108,4 +108,21 @@ class MovieRepository extends \Doctrine\ORM\EntityRepository
             ->getSingleScalarResult();
     }
 
+
+    public function categsByFilmId($id){
+
+        $result = $this
+            ->createQueryBuilder("movie")//construction de requête en DQL qui attends en param l'alias de l'entité
+            //si on ne fait pas de select il fait toutes les sous requêtes avec et renvoie une entité. Sinon, il renvoi un tableau de tableau
+//            ->select('movie.category')
+            ->andWhere('movie.id = :id')->setParameter('id', $id)
+            ->getQuery()
+            ->getSingleResult()
+        ;
+
+        return $result->getCategory()->getId();
+
+
+    }
+
 }

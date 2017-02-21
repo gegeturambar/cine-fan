@@ -38,6 +38,11 @@ class Category
 
 
     /**
+     * @ORM\ManyToMany(targetEntity="Actor", mappedBy="categories")
+     */
+    private $actors;
+
+    /**
      * Get id
      *
      * @return int
@@ -93,6 +98,32 @@ class Category
     public function getSlug()
     {
         return $this->slug;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getActors()
+    {
+        return $this->actors;
+    }
+
+    /**
+     * @param mixed $actors
+     */
+    public function setActors($actors)
+    {
+        $this->actors = $actors;
+    }
+
+    /**
+     * Remove actor
+     *
+     * @param \AppBundle\Entity\Actor $actor
+     */
+    public function removeActor(\AppBundle\Entity\Actor $actor)
+    {
+        $this->actors->removeElement($actor);
     }
 }
 

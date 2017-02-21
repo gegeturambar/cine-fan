@@ -11,6 +11,10 @@ services:
     app.service.utils.slug:
             class: AppBundle\Service\Utils\SlugService
 
+    app.service.handler.actorhandler:
+            class: AppBundle\Service\Handler\Actorhandler
+            arguments: ["@doctrine", "@app.service.utils.upload"]
+
     app.service.handler.formhandler:
         class: AppBundle\Service\Handler\Formhandler
         arguments: ["@doctrine" ]
@@ -41,6 +45,12 @@ services:
     app.service.listener.movie:
             class: AppBundle\Service\Listener\MovieListener
             arguments: [ "@app.service.utils.slug", "%upload_dir%" ]
+            tags:
+                - { name: doctrine.orm.entity_listener}
+
+    app.service.listener.actor:
+            class: AppBundle\Service\Listener\ActorListener
+            arguments: [ "@doctrine", "@app.service.utils.slug", "%upload_dir%" ]
             tags:
                 - { name: doctrine.orm.entity_listener}
 

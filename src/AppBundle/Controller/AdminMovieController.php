@@ -56,7 +56,8 @@ class AdminMovieController extends Controller
         //envoi du formulaire sous forme de vue
 
         return $this->render('admin-movie/form.html.twig', [
-            'form'=>$form->createView()
+            'form'=>$form->createView(),
+            'movie' => $entity
         ]);
     }
 

@@ -51,6 +51,10 @@
     <p>
         {{ form_label(form.picture, 'image' | trans | title ~ ' : ') }}
         {{ form_widget(form.picture) }}
+
+        {% if(movie.picture) %}<br>
+            <img width="50" height="50" src="{{ asset('upload/movie/' ~ movie.picture) }}"/>
+        {% endif %}
     </p>
     <p>
         {{ form_label(form.releaseDate, 'date de sortie' | trans | title ~ ' : ') }}

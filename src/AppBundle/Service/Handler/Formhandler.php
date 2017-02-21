@@ -33,7 +33,7 @@ class Formhandler
 
         //récupération de l'instance de l'entité "category" gérée par le formulaire
         $data   = $this->form->getData();
-        //print_r($data);die();
+//        print_r($data);die();
 
         // Étape 1 : On « persiste » l'entité : créé l'instance de la data - category
         $em->persist($data);
