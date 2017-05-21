@@ -1,0 +1,19 @@
+submit:
+    send: envoyer
+    search: rechercher
+    create: créer %value%
+    delete: supprimer
+    update: Modifier
+    category: categorie
+    movie: film
+    actor: acteur
+    user: utilisateur
+list:
+  edit: modifier
+  delete: supprimer
+filter:
+  title:  Rechercher par titre
+  date: Rechercher par date
+  category: Rechercher par catégorie
+  tags: Recherche par tags
+

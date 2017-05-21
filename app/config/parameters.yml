@@ -4,9 +4,12 @@ parameters:
     database_port: null
     database_name: cine-fan
     database_user: root
-    database_password: null
+    database_password: password
     mailer_transport: smtp
     mailer_host: smtp.office365.com
     mailer_user: info@pulsar-informatique.com
     mailer_password: 'j''ai utilisé celui de Pulsar informatique, ch''peux pas le dévoiler !'
     secret: ThisTokenIsNotSoSecretChangeIt
+
+eko_google_translate:
+        api_key: googleapikey

@@ -6,17 +6,32 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
+
 class CategoryType extends AbstractType
 {
-    /**
+
+	private $authorizationChecker;
+
+	public function __construct(AuthorizationChecker $authorizationChecker)
+	{
+		$this->authorizationChecker = $authorizationChecker;
+	}
+
+	/**
      * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+    	//$this->authorizationChecker->isGranted()
+
         $builder
             ->add('name')
 //            ->add('slug')
         ;
+        if($this->authorizationChecker->isGranted('ROLE_ADMIN')){
+        	$builder->add('published');
+        }
     }
     
     /**

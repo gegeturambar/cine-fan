@@ -24,7 +24,9 @@
         "incenteev/composer-parameter-handler": "^2.0",
         "beberlei/DoctrineExtensions": "^1.0",
         "knplabs/knp-paginator-bundle": "^2.5",
-        "friendsofsymfony/rest-bundle": "^2.1"
+        "friendsofsymfony/rest-bundle": "^2.1",
+        "knplabs/knp-snappy-bundle": "^1.4",
+        "eko/googletranslatebundle": "^1.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",

@@ -1,0 +1,5 @@
+category:
+    name:
+        notblank: Vous n'avez pas saisi la nom de la categorie
+    slug:
+        notblank: Vous n'avez pas saisi le slug

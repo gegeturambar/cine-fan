@@ -8,9 +8,17 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
 
 class ActorType extends AbstractType
 {
+	private $authorizationChecker;
+
+	public function __construct(AuthorizationChecker $authorizationChecker)
+	{
+		$this->authorizationChecker = $authorizationChecker;
+	}
+
     /**
      * {@inheritdoc}
      */
@@ -29,6 +37,7 @@ class ActorType extends AbstractType
                 "expanded"    => true,
                 "multiple"      => true //checkbox
             ])
+	        /*
         ->add('categories', EntityType::class, [
                 "class" => "AppBundle\Entity\Category",
                 "placeholder" => 'labelcategorylist',
@@ -36,7 +45,12 @@ class ActorType extends AbstractType
                 "expanded"    => true,
                 "multiple"      => true //checkbox
             ])
+	        */
         ;
+
+	    if($this->authorizationChecker->isGranted('ROLE_ADMIN')){
+		    $builder->add('published');
+	    }
 
         //ajout d'un souscripteur
         $builder->addEventSubscriber(new ActorFormSubscriber());

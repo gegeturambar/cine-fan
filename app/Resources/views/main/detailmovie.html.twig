@@ -7,13 +7,18 @@
             <p class="lead">{{ movie.description }}</p>
 
             <p>
-                <label>Date de sortie : </label> {{ movie.releaseDate | date('d/m/Y') }}</p>
-
+                <label>{{ "movie.releaseDate" | trans }} : </label> {{ movie.releaseDate | date('d/m/Y') }}</p>
             <p>
-                <label>Catégorie : </label> {{ movie.category.name }}
-
+                <label>{{ "movie.category" | trans }} : </label> {{ movie.category.name }}
             </p>
 
+            <p>
+                <label>{{ "movie.tags" | trans }} : </label> {{ movie.category.name }}
+            </p>
+
+            <p>
+                <label>{{ "movie.price" | trans }} : </label> {{ movie.price }}
+            </p>
         </div>
         <div class="col-lg-3">
             <img width="300" height="300" src="/upload/movie/{{ movie.picture }}"/>

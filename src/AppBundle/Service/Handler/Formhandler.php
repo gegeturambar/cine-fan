@@ -5,6 +5,7 @@ namespace AppBundle\Service\Handler;
 
 
 use Doctrine\Bundle\DoctrineBundle\Registry;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Symfony\Component\Form\FormInterface;
 
 class Formhandler
@@ -38,9 +39,8 @@ class Formhandler
         // Étape 1 : On « persiste » l'entité : créé l'instance de la data - category
         $em->persist($data);
 
-
         //flush : exécution des requêtes
-        $em->flush();
+	    $em->flush();
     }
 
     public function delete($id, $entite){

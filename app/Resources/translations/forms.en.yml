@@ -1,0 +1,18 @@
+submit:
+    send: send
+    search: search
+    create: create %value%
+    delete: delete
+    update: Update
+    category: category
+    movie: movie
+    actor: actor
+    user: user
+list:
+  edit: edit
+  delete: delete
+filter:
+  title: search by title
+  date: search by date
+  category: search by category
+  tags: search by tags

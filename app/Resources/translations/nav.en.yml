@@ -1,0 +1,17 @@
+nav:
+    category_manage: Manage categories
+    category_list: Categories list
+    category_create: New category
+    tag_manage: Manage tag
+    tag_list: Tags list
+    tag_create: New tag
+    movie_manage: Manage movies
+    movie_list: Movies list
+    movie_create: New movie
+    actor_manage: Manage actors
+    actor_list: Actors list
+    actor_create: New actor
+    user_manage: Manage users
+    user_list: Users list
+    user_create: New user
+    basket: basket

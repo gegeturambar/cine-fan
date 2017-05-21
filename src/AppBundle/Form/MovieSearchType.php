@@ -58,6 +58,13 @@ class MovieSearchType extends AbstractType
                 "multiple"      => false //checkbox,
 
             ])
+	        ->add('tags', EntityType::class, [
+		        "class" => "AppBundle\Entity\Tag",
+		        "choice_label" => 'name',
+		        "expanded"    => true,
+		        "multiple"      => true //checkbox,
+
+	        ])
         ;
 
     }

@@ -69,6 +69,47 @@ class Movie
      */
     private $releaseDate;
 
+	/**
+	 * @return mixed
+	 */
+	public function getPublished()
+	{
+		return $this->published;
+	}
+
+	/**
+	 * @param mixed $published
+	 */
+	public function setPublished($published)
+	{
+		$this->published = $published;
+	}
+
+	/**
+	 * @ORM\Column(name="published", type="boolean")
+	 */
+	private $published = false;
+
+	/**
+	 * @return mixed
+	 */
+	public function getPrice()
+	{
+		return $this->price;
+	}
+
+	/**
+	 * @param mixed $price
+	 */
+	public function setPrice($price)
+	{
+		$this->price = $price;
+	}
+
+	/**
+	 * @ORM\Column(name="price", type="integer")
+	 */
+	private $price = false;
 
     /**
      * @var
@@ -82,6 +123,29 @@ class Movie
      * @ORM\ManyToMany(targetEntity="Actor", mappedBy="movies")
      */
     private $actors;
+
+	/**
+	 * @return mixed
+	 */
+	public function getTags()
+	{
+		return $this->tags;
+	}
+
+	/**
+	 * @param mixed $tags
+	 */
+	public function setTags($tags)
+	{
+		$this->tags = $tags;
+	}
+
+	/**
+	 * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Tag", inversedBy="movies")
+	 * @ORM\JoinTable(name="tags_movies")
+	 */
+	private $tags;
+
 
     /**
      * Get id
@@ -242,6 +306,7 @@ class Movie
     public function __construct()
     {
         $this->actors = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**
@@ -267,6 +332,30 @@ class Movie
     {
         $this->actors->removeElement($actor);
     }
+
+	/**
+	 * Add tag
+	 *
+	 * @param \AppBundle\Entity\Tag $tag
+	 *
+	 * @return Movie
+	 */
+	public function addTag(\AppBundle\Entity\Tag $tag)
+	{
+		$this->tags[] = $tag;
+
+		return $this;
+	}
+
+	/**
+	 * Remove tag
+	 *
+	 * @param \AppBundle\Entity\Tag $tag
+	 */
+	public function removeTag(\AppBundle\Entity\Tag $tag)
+	{
+		$this->tags->removeElement($tag);
+	}
 
     /**
      * Get actors

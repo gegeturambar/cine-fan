@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if form.vars.value.id == false %}
+        {{ 'actor.title_form_create' | trans | capitalize }}
+    {% else %}
+        {{ 'actor.title_form_update' | trans | capitalize }}
+    {% endif %}
+
+    {#
+        form_start: début du formulaire
+        form_end: fin du formulaire
+        form_label: label champ
+        form_widget: champ
+        form_errors: affiche erreurs
+    #}
+    {{ form_start(form, { 'attr' : {'novalidate' : 'novalidate'} }) }}
+
+
+    {{ form_errors(form.nom) }}
+
+    <p>
+        {{ form_label(form.nom, 'actor.firstname' | trans | title ~ ' : ') }}
+        {{ form_widget(form.nom) }}
+    </p>
+    <p>
+        {{ form_label(form.prenom, 'actor.lastname' | trans | title ~ ' : ') }}
+        {{ form_widget(form.prenom) }}
+    </p>
+    <p>
+        {{ form_label(form.image, 'actor.portrait' | trans | title ~ ' : ') }}
+        {{ form_widget(form.image) }}
+    </p>
+    <p>
+        {{ form_label(form.dateNaissance, 'actor.birthday' | trans | title ~ ' : ') }}
+        {{ form_widget(form.dateNaissance) }}
+    </p>
+    <p>
+        {{ form_label(form.movies, 'actor.movies' | trans | title ~ ' : ') }}
+        {{ form_widget(form.movies) }}
+    </p>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <br>
+        <p>
+            {{ form_label(form.published, 'actor.published' | trans | title ~ ' : ') }}
+            {{ form_widget(form.published) }}
+        </p>
+    {% endif %}
+
+    {%  set buttontext = 'actor.actor' | trans %}
+
+    {% if form.vars.value.id == false %}
+        <p><input type="submit" value="{{ 'submit.create' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% else %}
+        <p><input type="submit" value="{{ 'submit.update' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% endif %}
+
+    {{ form_end(form) }}
+
+
+
+{% endblock %}

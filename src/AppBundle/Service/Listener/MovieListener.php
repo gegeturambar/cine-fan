@@ -6,15 +6,18 @@ use AppBundle\Entity\Movie;
 use AppBundle\Service\SlugService;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
 
 class MovieListener
 {
      private $slugService;
+     private $authorizationChecker;
      private $fold;
 
-    public function __construct(\AppBundle\Service\Utils\SlugService $slugService, $fold ){
+    public function __construct(\AppBundle\Service\Utils\SlugService $slugService, AuthorizationChecker $authorizationChecker, $fold ){
         /*on fait un construct quand il appelle un parametre qui est passé au constructeur*/
         $this->slugService = $slugService;
+        $this->authorizationChecker = $authorizationChecker;
         $this->fold = $fold;
     }
 
@@ -23,7 +26,7 @@ class MovieListener
 
         $slug           =$this->_generateSlug($movie->getTitle());
         $movie->setSlug($slug);
-//        print_r($movie);die();
+	    $movie->setPublished( $this->authorizationChecker->isGranted('ROLE_ADMIN') ? $movie->getPublished() : false );
     }
 
     /*evenement prepersist : evenement qui se déclenche à l'update*/
@@ -31,7 +34,6 @@ class MovieListener
 
 
         $entity = $eventArgs->getObject();
-        //dump($entity);
         $slug           =$this->_generateSlug($movie->getTitle());
         $movie->setSlug($slug);
 

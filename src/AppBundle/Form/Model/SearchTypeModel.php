@@ -15,6 +15,8 @@ class SearchTypeModel
     private $title;
     private $releaseDate;
     private $category;
+    private $tags;
+
     /**
      * @return mixed
      */
@@ -46,6 +48,22 @@ class SearchTypeModel
     {
         $this->releaseDate = $releaseDate;
     }
+
+	/**
+	 * @return mixed
+	 */
+	public function getTags()
+	{
+		return $this->tags;
+	}
+
+	/**
+	 * @param mixed $tags
+	 */
+	public function setTags($tags)
+	{
+		$this->tags = $tags;
+	}
 
     /**
      * @return mixed

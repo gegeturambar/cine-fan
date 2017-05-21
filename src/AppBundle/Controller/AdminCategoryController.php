@@ -15,10 +15,31 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
+/**
+ * Class AdminCategoryController
+ * @package AppBundle\Controller
+ */
 class AdminCategoryController extends Controller
 {
+
+	/**
+	 * @Route("/admin/category", name="app.admin.category.index")
+	 */
+	public function indexAction(Request $request)
+	{
+		$doctrine = $this->getDoctrine();
+		// Pour select
+		$rc = $doctrine->getRepository("AppBundle:Category");
+		$records = $rc->findAll();
+
+		// replace this example code with whatever you need
+		return $this->render('admin/category/index.html.twig', ['records'=>$records
+		]);
+	}
+
+
     /**
-     * @Route("/delete/{id}", name="app.admin.category.delete", requirements={"id" = "\d+"})
+     * @Route("/admin/category/delete/{id}", name="app.admin.category.delete", requirements={"id" = "\d+"})
      */
     public function deleteAction(Request $request, $id)
     {
@@ -27,10 +48,8 @@ class AdminCategoryController extends Controller
         $formHandler = $this->get('app.service.handler.formhandler');
         $formHandler->delete($id, 'AppBundle:Category' );
 
-//        $translate  = $this->get('translator');
-//        $delete     = $translate->trans('form.category.message.delete');
-
-        $delete     = 'La catégorie a bien été supprimée';
+        $translate  = $this->get('translator');
+	    $delete     = $translate->trans('category.flash_messages.delete');
 
         $this->addFlash('success', $delete);
 
@@ -38,8 +57,9 @@ class AdminCategoryController extends Controller
     }
 
     /**
-     * @Route("/add/category", name="app.admin.category.form")
-     * @Route("/update/category/{id}", name="app.admin.category.form.update", requirements={"id" = "\d+"})
+     * @Route("/category/add", name="app.category.form")
+     * @Route("/admin/category/add", name="app.admin.category.form")
+     * @Route("/admin/category/update/{id}", name="app.admin.category.form.update", requirements={"id" = "\d+"})
      */
     public function formAction(Request $request, $id=null)
     {
@@ -61,17 +81,20 @@ class AdminCategoryController extends Controller
         if($formHandler->check($form)){
             $formHandler->process();
 
-//            $translate  = $this->get('translator'); // pas besoin ici... mais je sais ce qu'il faut appeler !
-//            $add        = $id ? $translate->trans('form.category.message.update') : $translate->trans('form.category.message.ajout');
-
-            $add        = $id ? 'La catégorie a été mise à jour' : 'La catégorie a été ajoutée';
+	        $translate  = $this->get('translator');
+	        $add        = $id ? $translate->trans('category.flash_messages.update') : $translate->trans('category.flash_messages.add');
             $this->addFlash('success', $add);
-            return $this->redirectToRoute('app.main.listcateg');
+            if($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+            {
+	            return $this->redirectToRoute('app.admin.category.index');
+            }else{
+	            return $this->redirectToRoute('app.homepage.index');
+            }
         }
 
         //envoi du formulaire sous forme de vue
-        return $this->render('admin-category/form.html.twig', [
-            'form'=>$form->createView()
-        ]);
+	    return $this->render('admin/category/form.html.twig', [
+		    'form' => $form->createView()
+	    ]);
     }
 }

@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    {% if form.vars.value.id == false %}
+        <p>{{ title | capitalize }}</p>
+    {% else %}
+        <p>{{ title | capitalize }}</p>
+    {% endif %}
+
+    {#
+        form_start: début du formulaire
+        form_end: fin du formulaire
+        form_label: label champ
+        form_widget: champ
+        form_errors: affiche erreurs
+    #}
+    {{ form_start(form, { 'attr' : {'novalidate' : 'novalidate'} }) }}
+
+
+    {{ form_errors(form.username) }}
+
+    <p>
+        {{ form_label(form.username, 'user.username' | trans | title ~ ' : ') }}
+        {{ form_widget(form.username) }}
+    </p>
+    <p>
+        {{ form_label(form.email, 'user.email' | trans | title ~ ' : ') }}
+        {{ form_widget(form.email) }}
+    </p>
+    <p>
+        {{ form_label(form.password, 'user.password' | trans | title ~ ' : ') }}
+        {{ form_widget(form.password) }}
+    </p>
+    {%  set buttontext = 'user.user' | trans %}
+
+    {% if form.vars.value.id == false %}
+        <p><input type="submit" value="{{ 'submit.create' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% else %}
+        <p><input type="submit" value="{{ 'submit.update' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% endif %}
+    {{ form_end(form) }}
+
+
+
+{% endblock %}

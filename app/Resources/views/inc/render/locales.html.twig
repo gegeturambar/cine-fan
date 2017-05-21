@@ -1,0 +1,7 @@
+<ul class="dropdown-menu">
+{%  for loc, route in routes %}
+    {% set lang = loc ~ '_language' %}
+    <li><a href="{{ route['route']  }}"><i class="flag-icon flag-icon-{{ route['flag'] }}"></i></a></li>
+            <!-- {{ lang | trans({},'languages') }}</a></li> -->
+{%  endfor %}
+</ul>

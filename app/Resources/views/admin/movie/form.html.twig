@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <p>Formulaire d'ajout de film :)
+        <small>
+            pour avoir un aussi beau rendu de formulaire : il faut changer le form_themes de config.yml par
+            "bootstrap_3_layout.html.twig" dans la section twig
+        </small>
+    </p>
+    <p>
+        Remarquez la maîtrise de la concaténation et de l'utilisation des filtres de twig :
+    </p>
+    <p>
+        <small>
+            J'ai astucieusement setté la variable locale à fr pour avoir les dates en français :)
+        </small>
+    </p>
+    <p>
+        <small>
+            L'envoi d'email se fait à partir du MovieHandler... qui est un enfant du formHandler : par contre, l'envoi d'email ne
+            fonctionne plus en prod, j'ai changé le mot de passe SMTP, c'était celui de Pulsar informatique
+        </small>
+    </p>
+    <p>
+        <small>
+            J'ai aussi tout mis en place pour rendre le site bilingue... c'est dire !
+        </small>
+    </p>
+    {#
+        form_start: début du formulaire
+        form_end: fin du formulaire
+        form_label: label champ
+        form_widget: champ
+        form_errors: affiche erreurs
+    #}
+    {{ form_start(form, { 'attr' : {'novalidate' : 'novalidate'} }) }}
+
+
+    {{ form_errors(form.title) }}
+    {{ form_errors(form.picture) }}
+    {{ form_errors(form.category) }}
+    <p>
+        {{ form_label(form.title, 'movie.title' | trans | title ~ ' : ') }}
+        {{ form_widget(form.title) }}
+    </p>
+    <p>
+        {{ form_label(form.title, 'movie.description' | trans | title ~ ' : ') }}
+        {{ form_widget(form.description) }}
+    </p>
+    <p>
+        {{ form_label(form.picture, 'movie.poster' | trans | title ~ ' : ') }}
+        {{ form_widget(form.picture) }}
+
+        {% if(movie.picture) %}<br>
+            <img width="50" height="50" src="{{ asset('upload/movie/' ~ movie.picture) }}"/>
+        {% endif %}
+    </p>
+    <p>
+        {{ form_label(form.releaseDate, 'movie.releaseDate' | trans | title ~ ' : ') }}
+        {{ form_widget(form.releaseDate) }}
+    </p>
+    <p>
+        {{ form_label(form.category, 'movie.category' | trans | title ~ ' : ') }}
+        {{ form_widget(form.category) }}
+    </p>
+
+    <p>
+        {{ form_label(form.tags, 'movie.tags' | trans | title ~ ' : ') }}
+        {{ form_widget(form.tags) }}
+    </p>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <br>
+        <p>
+            {{ form_label(form.published, 'movie.published' | trans | title ~ ' : ') }}
+            {{ form_widget(form.published) }}
+        </p>
+    {% endif %}
+
+    {%  set buttontext = 'movie.movie' | trans %}
+
+    {% if form.vars.value.id == false %}
+        <p><input type="submit" value="{{ 'submit.create' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% else %}
+        <p><input type="submit" value="{{ 'submit.update' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% endif %}
+
+    {{ form_end(form) }}
+
+
+
+{% endblock %}

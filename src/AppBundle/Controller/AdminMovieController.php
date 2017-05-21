@@ -10,15 +10,35 @@ namespace AppBundle\Controller;
 
 use AppBundle\Entity\Movie;
 use AppBundle\Form\MovieType;
+use Doctrine\DBAL\Exception\UniqueConstraintViolationException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\HttpFoundation\Request;
 
 class AdminMovieController extends Controller
 {
-    /**
-     * @Route("/add/movie", name="app.admin.movie.form")
-     * @Route("/update/movie/{id}", name="app.admin.movie.form.update", requirements={"id" = "\d+"})
+
+	/**
+	 * @Route("/admin/movie", name="app.admin.movie.index")
+	 */
+	public function indexAction(Request $request)
+	{
+		$doctrine = $this->getDoctrine();
+		// Pour select
+		$rc = $doctrine->getRepository("AppBundle:Movie");
+		$records = $rc->findAll();
+
+		// replace this example code with whatever you need
+		return $this->render('admin/movie/index.html.twig', ['records'=>$records
+		]);
+	}
+
+
+	/**
+	 * @Route("/movie/add", name="app.movie.form")
+     * @Route("/admin/movie/add", name="app.admin.movie.form")
+     * @Route("/admin/movie/update/{id}", name="app.admin.movie.form.update", requirements={"id" = "\d+"})
      */
     public function formAction(Request $request, $id=null)
     {
@@ -30,39 +50,50 @@ class AdminMovieController extends Controller
         $entity = $id ? $rc->find($id) : new Movie();
         $entityType     = MovieType::class;
 
-
-
         $form = $this->createForm($entityType, $entity);
         $form->handleRequest($request);//récupération de la saisie
 
         //Service de gestion du formulaire
         $movieHandler = $this->get('app.service.handler.moviehandler');
 
-        if($movieHandler->check($form)){
+        if($movieHandler->check($form))
+        {
+	        $translate = $this->get('translator');
+	        try
+	        {
+		        $movieHandler->process();
+	        }
+	        catch (UniqueConstraintViolationException $exception)
+	        {
+		        $this->addFlash('warning', $translate->trans('movie.flash_messages.add_fail_already_existed'));
 
-            $movieHandler->process();
+		        return $this->redirect($request->getUri());
+	        }
 
-//            $translate  = $this->get('translator');
-//            $add        = $id ? $translate->trans('form.movie.message.update') : $translate->trans('form.movie.message.ajout');
+	        $add = $id ? $translate->trans('movie.flash_messages.update') : $translate->trans('movie.flash_messages.add');
+	        $this->addFlash('success', $add);
 
-            $add        = $id ? 'Le film a bien été modifié' : 'Le film a bien été ajouté';
-            $this->addFlash('success', $add);
-
-
-            return $this->redirectToRoute('app.main.search');
+	        if ($this->get('security.authorization_checker')->isGranted('ROLE_ADMIN'))
+	        {
+		        return $this->redirectToRoute('app.admin.movie.index');
+	        }
+	        else
+	        {
+		        return $this->redirectToRoute('/searchmovie');
+	        }
         }
 
 
         //envoi du formulaire sous forme de vue
 
-        return $this->render('admin-movie/form.html.twig', [
+        return $this->render('admin/movie/form.html.twig', [
             'form'=>$form->createView(),
             'movie' => $entity
         ]);
     }
 
     /**
-     * @Route("/movie/delete/{id}", name="app.admin.movie.delete", requirements={"id" = "\d+"})
+     * @Route("/admin/movie/delete/{id}", name="app.admin.movie.delete", requirements={"id" = "\d+"})
      */
     public function deleteAction(Request $request, $id)
     {

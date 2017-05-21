@@ -43,12 +43,33 @@ class Actor
      */
     private $alias;
 
+	/**
+	 * @return mixed
+	 */
+	public function getPublished()
+	{
+		return $this->published;
+	}
+
+	/**
+	 * @param mixed $published
+	 */
+	public function setPublished($published)
+	{
+		$this->published = $published;
+	}
+
     /**
      * @var string
      *
      * @ORM\Column(name="image", type="string", length=255)
      */
     private $image;
+
+	/**
+	 * @ORM\Column(name="published", type="boolean")
+	 */
+	private $published = false;
 
     /**
      * @var \DateTime
@@ -65,14 +86,14 @@ class Actor
     private $movies;
 
 
-
+/*
     /**
      * Many Actor have Many .
      * @ORM\ManyToMany(targetEntity="Category", inversedBy="actors")
      * @ORM\JoinTable(name="actors_category")
-     */
-    private $categories;
 
+    private $categories;
+*/
 
     /**
      * Get id
@@ -192,39 +213,6 @@ class Actor
 
     }
 
-    /**
-     * Add category
-     *
-     * @param \AppBundle\Entity\Category $category
-     *
-     * @return Actor
-     */
-    public function addCategory(\AppBundle\Entity\Category $category)
-    {
-        $this->categories[] = $category;
-
-        return $this;
-    }
-
-    /**
-     * Remove category
-     *
-     * @param \AppBundle\Entity\Category $category
-     */
-    public function removeCategory(\AppBundle\Entity\Category $category)
-    {
-        $this->categories->removeElement($category);
-    }
-
-    /**
-     * Get categories
-     *
-     * @return \Doctrine\Common\Collections\Collection
-     */
-    public function getCategories()
-    {
-        return $this->categories;
-    }
 
     /**
      * Add movie

@@ -1,0 +1,43 @@
+{% extends 'base.admin.html.twig' %}
+
+{% block body %}
+
+    {% set action = form.vars.value.id %}
+
+
+
+
+    <h2>{{ 'user.user' | trans | capitalize }}</h2>
+    {# debut du formulaire #}
+    {{ form_start(form, { 'attr':{ 'novalidate':'novalidate'} } ) }}
+
+    <p>
+        {{ form_label(form.username, 'user.username' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.username) }}
+    </p>
+
+    <p>
+        {{ form_label(form.password, 'user.password' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.password) }}
+    </p>
+     <p>
+        {{ form_label(form.email, 'user.email' | trans | capitalize ~ ':' ) }}
+        {{ form_widget(form.email) }}
+    </p>
+
+    {%  set buttontext = 'submit.user' | trans({}, 'forms') %}
+
+    {% if action is not null %}
+        <input type="submit" value="{{ 'submit.update' | trans({'%value%' : buttontext},'forms') }}">
+    {% else %}
+        <input type="submit" value="{{ 'submit.create' | trans({'%value%' : buttontext},'forms') }}">
+    {% endif %}
+
+    {{ form_errors(form.username) }}
+    {# fin du formulaire #}
+    {{ form_end(form) }}
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

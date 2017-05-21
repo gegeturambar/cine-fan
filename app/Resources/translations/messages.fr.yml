@@ -1,8 +1,119 @@
 form:
     movie:
-        formulaire: Formulaire d'ajout de film :) pour avoir un aussi beau rendu : il faut changer le form_themes en config par "bootstrap_3_layout.html.twig"
+        formulaire: "Formulaire d'ajout de film :) pour avoir un aussi beau rendu : il faut changer le form_themes en config par \"bootstrap_3_layout.html.twig\""
+yes: oui
+no: non
+name: nom
+slug: alias
+actions: actions
+contribute: contribuer
+labelcategorylist: Selectionnez une catégorie
+labelmovielist: Selectionnez un film*
+published: publié
+unpublished: non publié
 
+category:
+    category: categorie
+    name: Nom de la catégorie
+    published: publié
+    submit: proposer une catégorie
+    create: Créer
+    delete: supprimer
+    update: éditer
+    title_update: Editer une catégorie
+    title_create: Créer une catégorie
+    title_form_create: Formulaire d'ajout de catégorie
+    title_form_update: Formulaire d'édition de catégorie
+    flash_messages:
+        add: Le thème a bien été ajouté
+        delete: Le thème a bien été supprimé
+        delete_fail: Le thème n'a pas été supprimé convenablement
+        update: Le thème a bien été modifié
 
+tag:
+    tag: tag
+    name: nom du tag
+    published: publié
+    submit: proposer un tag
+    create: Créer
+    delete: supprimer
+    update: éditer
+    title_update: Editer un tag
+    title_create: Créer un tag
+    title_form_create: Formulaire d'ajout de tag
+    title_form_update: Formulaire d'édition de tag
+    flash_messages:
+            add: Le tag a bien été ajouté
+            delete: Le tag a bien été supprimé
+            delete_fail: Le tag n'a pas été supprimé convenablement
+            update: Le tag a bien été modifié
 
-
-je n'ai pas eu le temps d'activer les locales pour rendre le site bilingue. MAIS je sais comment faire...
+movie:
+    movie: Film
+    title: Titre
+    category: Thème
+    tags: Tags
+    releaseDate: Date de réalisation
+    poster: Image
+    slug: slug
+    actors: acteurs
+    price: prix
+    description: description
+    published: publié
+    search: Chercher des films
+    search_by_categorie: chercher par catégorie
+    submit: proposer un film
+    create: Créer
+    delete: supprimer
+    update: éditer
+    title_update: Editer un film
+    title_create: Créer un film
+    title_form_create: Formulaire d'ajout de film
+    title_form_update: Formulaire d'édition de film
+    flash_messages:
+        add: Le film a bien été ajouté
+        add_fail: Le film n'a pas été ajouté convenablement
+        add_fail_already_existed: le film n'a pas été ajouté convenablement, car il existe déjà
+        delete: Le film a bien été supprimé
+        delete_fail: Le film n'a pas été supprimé convenablement
+        update: Le film a bien été modifié
+actor:
+    actor: Acteur
+    firstname: Nom
+    lastname: Prénom
+    birthday: Anniversaire
+    portrait: Portrait
+    bio:  Bio
+    published: publié
+    movies: Films
+    movies_category: Types des films
+    submit: proposer un acteur
+    create: Créer
+    delete: supprimer
+    update: éditer
+    list: liste des acteurs
+    title_update: Editer un acteur
+    title_create: Créer un acteur
+    title_form_create: Formulaire d'ajout d'acteur
+    title_form_update: Formulaire d'édition d'acteur
+    flash_messages:
+        add: L'acteur a bien été ajouté
+        delete: L'acteur a bien été supprimé
+        delete_fail: L'acteur n'a pas été supprimé convenablement
+        update: L'acteur a bien été modifié
+user:
+  user: Utilisateur
+  username: "nom d'utilisateur"
+  password: mot de passe
+  roles: roles
+  email: mail
+  is_active: actif
+  last_connection: dernière connexion*
+  title_update: Editer un utilisateur
+  title_create: Créer un utilisateur
+  title_create_own: Inscription
+  flash_messages:
+          add: "L'utilisateur a bien été ajouté"
+          delete: "L'utilisateur a bien été supprimé"
+          delete_fail: "L'utilisateur n'a pas été supprimé convenablement"
+          update: "L'utilisateur a bien été modifié"

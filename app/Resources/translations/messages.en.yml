@@ -1,0 +1,114 @@
+yes: yes
+no: no
+name: name
+slug: slug
+actions: actions
+contribute: contribute
+published: published
+unpublished: unpublished
+labelcategorylist: Select a category
+labelmovielist: Select a movie
+category:
+    category: category
+    name: category's name
+    published: published
+    submit: submit a category
+    create: Create
+    delete: Delete
+    update: Update
+    title_update: Update a category
+    title_create: Create a category
+    title_form_create: category add Form
+    title_form_update: category update Form
+    flash_messages:
+            add: The theme has been added succesfully
+            delete: The theme has been deleted succesfully
+            delete_fail: The theme has not been deleted succesfully
+            update: The theme has been modified succesfully
+tag:
+    tag: tag
+    name: tag's name
+    published: published
+    submit: submit a tag
+    create: Create
+    delete: Delete
+    update: Update
+    title_update: Update a tag
+    title_create: Create a tag
+    title_form_create: tag add Form
+    title_form_update: tag update Form
+    flash_messages:
+            add: The tag has been added succesfully
+            delete: The tag has been deleted succesfully
+            delete_fail: The tag has not been deleted succesfully
+            update: The tag has been modified succesfully
+movie:
+    movie: movie
+    title: Title
+    category: Category
+    tags: Tags
+    releaseDate: Release date
+    poster: Poster
+    slug: slug
+    actors: actors
+    price: price
+    published: published
+    description: description
+    search: search movies
+    search_by_categorie: search by category
+    submit: submit a movie
+    create: Create
+    delete: Delete
+    update: Update
+    title_update: Update a movie
+    title_create: Create a movie
+    title_form_create: movie add Form
+    title_form_update: movie update Form
+    flash_messages:
+            add: The movie has been added succesfully
+            add_fail: The movie has not been added succesfully
+            add_fail_already_existed: this movie has not been added succesfully, because it already existed !
+            delete: The movie has been deleted succesfully
+            delete_fail: The movie has not been deleted succesfully
+            update: The movie has been modified succesfully
+actor:
+    actor: Actor
+    firstname: First Name
+    lastname: Last name
+    birthday: Birthday
+    portrait: Portrait
+    movies: Movies
+    movies_category: movies themes
+    bio:  Bio
+    published: published
+    submit: submit an actor
+    create: Create
+    delete: Delete
+    update: Update
+    list: actor's list
+    title_update: Update an actor
+    title_create: Create an actor
+    title_form_create: actor add Form
+    title_form_update: actor update Form
+    flash_messages:
+           add: The actor has been added succesfully
+           delete: The actor has been deleted succesfully
+           delete_fail: The actor has not been deleted succesfully
+           update: The actor has been modified succesfully
+
+user:
+  user: user
+  username: username
+  password: password
+  roles: roles
+  is_active: is active
+  last_connection: last connection
+  email: email
+  title_update: Update a user
+  title_create: Create a user
+  title_create_own: Inscription
+  flash_messages:
+             add: The user has been added succesfully
+             delete: The user has been deleted succesfully
+             delete_fail: The user has not been deleted succesfully
+             update: The user has been modified succesfully

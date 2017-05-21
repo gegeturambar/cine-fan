@@ -1,33 +1,625 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/app/Resources/views/admin/security/index.html.twig" line="3" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="97919ce1-a60c-4d42-9487-747c87561a34" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/PlaceController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Place.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Handler/Actorhandler.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Listener/ActorListener.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Subscriber/ActorFormSubscriber.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/forms.en.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/forms.fr.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/languages.fr.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/nav.en.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/nav.fr.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/tag.en.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/tag.es.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/tag.fr.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.en.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/translations/validators.fr.yml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/Emails/registration.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/actor/form.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/actor/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/category/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/movie/form.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/movie/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/tag/form.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/admin/tag/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/base.admin.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/base.simple.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/basket/basket_price.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/basket/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/inc/maintenance.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/inc/nav.admin.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/inc/render/locales.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/inc/render/movies.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/order/index.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/order/ordertopdf.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/security/form.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app/Resources/views/security/login.html.twig" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminTagController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/BasketController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/SecurityController.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Role.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Tag.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Event/OrderEvents.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Event/OrderFinalisationEvent.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/TagType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/RoleRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/TagRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/UserRepository.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Basket/Basket.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Handler/UserHandler.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Listener/TagListener.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Subscriber/AuthentificationSubscriber.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Subscriber/OrderEventsSubscriber.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Twig/FunctionExtension.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Utils/TranslateService.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/tests/AppBundle/Controller/SecurityControllerTest.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/css/flag-icon.min.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ad.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ae.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/af.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ag.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ai.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/al.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/am.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ao.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/aq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ar.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/as.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/at.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/au.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/aw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ax.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/az.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ba.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/be.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/br.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/by.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/bz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ca.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ch.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ci.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ck.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/co.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/cz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/de.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/dj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/dk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/dm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/do.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/dz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ec.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ee.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/eg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/eh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/er.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/es.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/et.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/eu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/fi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/fj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/fk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/fm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/fo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/fr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ga.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gb-eng.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gb-nir.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gb-sct.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gb-wls.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ge.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/gy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/hk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/hm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/hn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/hr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ht.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/hu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/id.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ie.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/il.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/im.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/in.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/io.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/iq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ir.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/is.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/it.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/je.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/jm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/jo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/jp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ke.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/kg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/kh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ki.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/km.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/kn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/kp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/kr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/kw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ky.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/kz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/la.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/lb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/lc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/li.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/lk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/lr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ls.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/lt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/lu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/lv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ly.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ma.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/md.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/me.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ml.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ms.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/my.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/mz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/na.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/nc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ne.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/nf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ng.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ni.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/nl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/no.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/np.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/nr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/nu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/nz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/om.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pe.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ph.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ps.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/pw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/py.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/qa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/re.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ro.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/rs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ru.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/rw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/se.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/si.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/so.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ss.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/st.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/sz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/td.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/th.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/to.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/tz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ua.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ug.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/um.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/un.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/us.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/uy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/uz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/va.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/vc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ve.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/vg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/vi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/vn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/vu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/wf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ws.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/ye.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/yt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/za.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/zm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/1x1/zw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ad.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ae.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/af.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ag.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ai.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/al.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/am.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ao.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/aq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ar.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/as.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/at.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/au.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/aw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ax.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/az.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ba.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/be.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/br.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/by.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/bz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ca.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ch.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ci.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ck.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/co.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/cz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/de.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/dj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/dk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/dm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/do.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/dz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ec.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ee.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/eg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/eh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/er.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/es.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/et.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/eu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/fi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/fj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/fk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/fm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/fo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/fr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ga.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gb-eng.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gb-nir.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gb-sct.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gb-wls.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ge.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/gy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/hk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/hm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/hn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/hr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ht.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/hu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/id.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ie.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/il.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/im.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/in.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/io.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/iq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ir.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/is.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/it.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/je.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/jm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/jo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/jp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ke.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/kg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/kh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ki.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/km.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/kn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/kp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/kr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/kw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ky.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/kz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/la.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/lb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/lc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/li.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/lk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/lr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ls.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/lt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/lu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/lv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ly.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ma.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/md.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/me.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ml.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mo.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mp.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mq.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ms.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/my.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/mz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/na.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/nc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ne.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/nf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ng.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ni.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/nl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/no.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/np.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/nr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/nu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/nz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/om.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pe.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ph.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ps.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/pw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/py.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/qa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/re.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ro.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/rs.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ru.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/rw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sa.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sb.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sd.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/se.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sh.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/si.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/so.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ss.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/st.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sx.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/sz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/td.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/th.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tj.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tk.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tl.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/to.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tr.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tv.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/tz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ua.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ug.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/um.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/un.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/us.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/uy.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/uz.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/va.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/vc.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ve.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/vg.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/vi.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/vn.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/vu.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/wf.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ws.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/ye.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/yt.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/za.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/zm.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/flags/4x3/zw.svg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/js/basket.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/app/Resources/views/admin-movie/form.html.twig" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_klnitvke0ajvotnrrtdfqapor7" afterPath="" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/admin-actor/form.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/security/form.html.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/admin-actor/index.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/security/index.html.twig" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/app/Resources/views/admin-category/form.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin/category/form.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/cine-fan.iml" afterPath="$PROJECT_DIR$/.idea/cine-fan.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/AppKernel.php" afterPath="$PROJECT_DIR$/app/AppKernel.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/admin-movie/form.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/admin-movie/form.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/forms.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/forms.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" afterPath="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/inc/nav.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/inc/nav.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/main/detailmovie.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/main/detailmovie.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/main/searchcateg.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/main/searchcateg.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/main/searchmovie.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/main/searchmovie.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/config.yml" afterPath="$PROJECT_DIR$/app/config/config.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/security.yml" afterPath="$PROJECT_DIR$/app/config/security.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/config/services.yml" afterPath="$PROJECT_DIR$/app/config/services.yml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.json" afterPath="$PROJECT_DIR$/composer.json" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/composer.lock" afterPath="$PROJECT_DIR$/composer.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminCategoryController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminCategoryController.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AdminMovieController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AdminMovieController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Actor.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Actor.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ActorType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ActorType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/CategoryType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/CategoryType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/Model/SearchTypeModel.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/Model/SearchTypeModel.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/MovieSearchType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/MovieSearchType.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/MovieType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/MovieType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/CompteurRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/CompteurRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/MovieRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/MovieRepository.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/Handler/Formhandler.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Handler/Formhandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/Handler/Moviehandler.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Handler/Moviehandler.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/Listener/ActorListener.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Listener/ActorListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/Listener/CategoryListener.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Listener/CategoryListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/Listener/MovieListener.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Listener/MovieListener.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Service/Utils/UploadUtils.php" afterPath="$PROJECT_DIR$/src/AppBundle/Service/Utils/UploadUtils.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/logs/dev.log" afterPath="$PROJECT_DIR$/var/logs/dev.log" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/var/sessions/dev/sess_klnitvke0ajvotnrrtdfqapor7" afterPath="$PROJECT_DIR$/var/sessions/dev/sess_klnitvke0ajvotnrrtdfqapor7" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/autoload.php" afterPath="$PROJECT_DIR$/vendor/autoload.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" afterPath="$PROJECT_DIR$/vendor/composer/ClassLoader.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_files.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_files.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_namespaces.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_psr4.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_real.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_real.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/installed.json" afterPath="$PROJECT_DIR$/vendor/composer/installed.json" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -43,101 +635,37 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Actor.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Actor.php">
+      <file leaf-file-name="movies.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/inc/render/movies.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="32" />
+            <state relative-caret-position="196">
+              <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ActorType.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ActorType.php">
+      <file leaf-file-name="searchmovie.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Resources/views/main/searchmovie.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="37" column="14" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="37" selection-end-column="14" />
+            <state relative-caret-position="486">
+              <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
               <folding>
-                <element signature="e#34#87#0#PHP" expanded="true" />
+                <element signature="e#12#26#0#Twig" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="AppKernel.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <file leaf-file-name="AdminActorController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/config.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="92" column="29" lean-forward="false" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Place.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Place.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1021">
-              <caret line="62" column="1" lean-forward="false" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlaceController.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PlaceController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+            <state relative-caret-position="249">
+              <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
               <folding>
-                <element signature="e#40#99#0#PHP" expanded="true" />
-                <element signature="e#690#707#1#PHP" expanded="true" />
-                <element signature="e#1527#1544#1#PHP" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="routing.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UserController.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
-              <folding>
-                <element signature="e#39#98#0#PHP" expanded="true" />
-                <element signature="e#730#746#1#PHP" expanded="true" />
-                <element signature="e#1359#1375#1#PHP" expanded="true" />
+                <element signature="e#772#801#0#PHP" expanded="true" />
+                <element signature="e#2656#2679#1#PHP" expanded="true" />
+                <element signature="e#2772#2800#0#PHP" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -146,8 +674,28 @@
       <file leaf-file-name="MainController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MainController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-34">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="360">
+              <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieRepository.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/MovieRepository.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="341">
+              <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MovieSearchType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/MovieSearchType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="406">
+              <caret line="54" column="53" lean-forward="false" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
               <folding />
             </state>
           </provider>
@@ -157,40 +705,46 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>actorListener</find>
-      <find>date</find>
-      <find>movieListener</find>
-      <find>lastnam</find>
-      <find>index</find>
-      <find>alias</find>
+      <find>catégorie</find>
       <find>movie</find>
-      <find>categories</find>
-      <find>category</find>
-      <find>man</find>
-      <find>$actor</find>
-      <find>entit</find>
-      <find>categor</find>
-      <find>getA</find>
-      <find>getCat</find>
-      <find>removeCategory</find>
-      <find>removeElement</find>
-      <find>$categ</find>
-      <find>_categsLink</find>
-      <find>remove</find>
-      <find>$movies</find>
+      <find>getTag</find>
+      <find>getCa</find>
+      <find>getActor</find>
       <find>actor</find>
+      <find>app.movie.view</find>
+      <find>published</find>
+      <find>locale</find>
+      <find>_categsLink</find>
+      <find>request</find>
+      <find>listener</find>
+      <find>category</find>
+      <find>Utils</find>
+      <find>cat</find>
+      <find>Transl</find>
+      <find>translat</find>
+      <find>transl</find>
+      <find>f</find>
+      <find>fir</find>
+      <find>firs</find>
+      <find>first</find>
+      <find>firstn</find>
+      <find>firstname</find>
+      <find>tag</find>
+      <find>construct</find>
+      <find>addMovie</find>
+      <find>tags</find>
       <find>movies</find>
-      <find>categori</find>
-      <find>act</find>
-      <find>categ</find>
-      <find>many</find>
-      <find>removeC</find>
-      <find>seria</find>
-      <find>getCategories</find>
+      <find>firstna</find>
     </findStrings>
+    <replaceStrings>
+      <replace>user</replace>
+      <replace>price</replace>
+      <replace>tag</replace>
+    </replaceStrings>
     <dirStrings>
       <dir>C:\wamp64\www\cine-fan\src\AppBundle\Controller</dir>
       <dir>C:\wamp64\www\cine-fan\src\AppBundle</dir>
+      <dir>$PROJECT_DIR$/app/Resources/translations</dir>
     </dirStrings>
   </component>
   <component name="Git.Settings">
@@ -199,57 +753,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Categorie.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/CategoryRepository.php" />
-        <option value="$PROJECT_DIR$/app/Resources/translations/messages.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin-category/form.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/translations/forms.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/CategoryType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Utils/SlugService.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminCategoryController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/UserType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/CompteurRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Handler/Moviehandler.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Handler/Formhandler.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/category/form.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/base.html.twig" />
-        <option value="$PROJECT_DIR$/web/css/custom.css" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/movie/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" />
+        <option value="$PROJECT_DIR$/bin/symfony_requirements" />
+        <option value="$PROJECT_DIR$/app/AppKernel.php" />
+        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/tag/form.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/TagType.php" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/nav.fr.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/nav.en.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/inc/nav.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminMovieController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminCategoryController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminTagController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/ActorType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Actor.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Listener/ActorListener.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/base.admin.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/inc/nav.admin.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/category/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/actor/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Utils/UploadUtils.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Utils/TranslateService.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Twig/FunctionExtension.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Service/Listener/TagListener.php" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/tag.en.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/tag/index.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/main/detailmovie.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/messages.en.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/messages.fr.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/movie/form.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/admin/actor/form.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/views/inc/render/movies.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/MovieType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Tag.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" />
+        <option value="$PROJECT_DIR$/app/Resources/views/main/searchmovie.html.twig" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/forms.fr.yml" />
+        <option value="$PROJECT_DIR$/app/Resources/translations/forms.en.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/MovieSearchType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/Model/SearchTypeModel.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Listener/MovieListener.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Listener/CategoryListener.php" />
-        <option value="$PROJECT_DIR$/app/config/parameters.yml" />
-        <option value="$PROJECT_DIR$/app/Resources/views/main/detailmovie.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Compteur.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Handler/Moviehandler.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Twig/AllMoviesService.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/MainController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/main/searchmoviebycateg.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/main/searchmovie.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/main/searchcateg.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/main/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/MovieType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Subscriber/MovieFormSubscriber.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminMovieController.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin-movie/form.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Handler/ActorHandler.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Handler/Actorhandler.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Handler/Formhandler.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Subscriber/ActorFormSubscriber.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin-actor/form.html.twig" />
-        <option value="$PROJECT_DIR$/app/Resources/views/inc/nav.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/services.yml" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/MovieRepository.php" />
-        <option value="$PROJECT_DIR$/app/Resources/views/admin-actor/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Category.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Movie.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Actor.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Service/Listener/ActorListener.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/ActorType.php" />
-        <option value="$PROJECT_DIR$/app/AppKernel.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Place.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/User.php" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/app/config/routing.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/UserController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PlaceController.php" />
       </list>
     </option>
   </component>
@@ -261,9 +815,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-7" />
-    <option name="width" value="1376" />
-    <option name="height" value="735" />
+    <option name="x" value="-1" />
+    <option name="y" value="27" />
+    <option name="width" value="1922" />
+    <option name="height" value="1054" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -283,6 +838,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -306,6 +862,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="flags" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -406,6 +998,10 @@
               <option name="myItemId" value="Service" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Twig" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -503,6 +1099,32 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="Service" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Basket" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="Repository" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -526,6 +1148,54 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Form" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Model" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="AppBundle" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Event" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -601,7 +1271,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -624,6 +1298,36 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="security" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="order" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -701,7 +1405,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin-movie" />
+              <option name="myItemId" value="inc" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="render" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -727,7 +1435,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="admin-actor" />
+              <option name="myItemId" value="Emails" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -748,10 +1456,203 @@
               <option name="myItemId" value="Resources" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="basket" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tag" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="movie" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="category" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="actor" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Resources" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="translations" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="cine-fan" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="config" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -761,7 +1662,42 @@
     <property name="js.eslint.eslintPackage" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/Resources/views/admin/category" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/AppBundle/Service/Utils" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Service/Listener" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Form" />
+      <recent name="$PROJECT_DIR$/src/AppBundle/Controller" />
+      <recent name="$PROJECT_DIR$/app/Resources/views/admin/" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
   <component name="RunManager">
+    <configuration default="true" type="CodeceptionConfigurationType" factoryName="Codeception">
+      <PhpTestRunnerSettings />
+      <method />
+    </configuration>
+    <configuration default="true" type="JavaScriptTestRunnerJest" factoryName="Jest">
+      <node-interpreter value="project" />
+      <working-dir value="" />
+      <envs />
+      <scope-kind value="ALL" />
+      <method />
+    </configuration>
     <configuration default="true" type="JavaScriptTestRunnerProtractor" factoryName="Protractor">
       <config-file value="" />
       <node-interpreter value="project" />
@@ -832,33 +1768,33 @@
       <workItem from="1486888000533" duration="28439000" />
       <workItem from="1487578061782" duration="27390000" />
       <workItem from="1487670634473" duration="12784000" />
+      <workItem from="1495184259865" duration="62349000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="68613000" />
+    <option name="totallyTimeSpent" value="130962000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="0" width="1376" height="735" extended-state="0" />
-    <editor active="true" />
+    <frame x="-1" y="27" width="1922" height="1054" extended-state="6" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25835866" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20641711" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.25496688" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3289689" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -867,423 +1803,452 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Basket to do" />
+    <option name="LAST_COMMIT_MESSAGE" value="Basket to do" />
+  </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="2" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/CategoryType.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="21" column="7" lean-forward="false" selection-start-line="21" selection-start-column="7" selection-end-line="21" selection-end-column="7" />
-          <folding>
-            <element signature="e#34#74#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Utils/SlugService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="8" column="33" lean-forward="false" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="22" lean-forward="false" selection-start-line="1" selection-start-column="22" selection-end-line="1" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/Model/SearchTypeModel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="59" column="7" lean-forward="false" selection-start-line="59" selection-start-column="7" selection-end-line="59" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/mysql.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="30" lean-forward="false" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/knplabs/knp-paginator-bundle/Resources/views/Pagination/twitter_bootstrap_v3_pagination.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-51">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Listener/CategoryListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="26" column="68" lean-forward="false" selection-start-line="26" selection-start-column="68" selection-end-line="26" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminCategoryController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="61" column="36" lean-forward="false" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Twig/AllMoviesService.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="1" lean-forward="false" selection-start-line="14" selection-start-column="1" selection-end-line="14" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/main/searchmovie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="35" lean-forward="false" selection-start-line="7" selection-start-column="35" selection-end-line="7" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/main/searchmoviebycateg.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="21" column="24" lean-forward="false" selection-start-line="20" selection-start-column="24" selection-end-line="21" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/main/searchcateg.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="78" lean-forward="false" selection-start-line="3" selection-start-column="78" selection-end-line="3" selection-end-column="78" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/main/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="65" lean-forward="false" selection-start-line="16" selection-start-column="65" selection-end-line="16" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/.gitattributes">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/Extension/Core/DataMapper/RadioListMapper.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="25" column="6" lean-forward="false" selection-start-line="25" selection-start-column="6" selection-end-line="25" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Utils/StringUtils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="11" column="6" lean-forward="false" selection-start-line="11" selection-start-column="6" selection-end-line="11" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Utils/UploadUtils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="13" column="6" lean-forward="false" selection-start-line="13" selection-start-column="6" selection-end-line="13" selection-end-column="6" />
+        <state relative-caret-position="432">
+          <caret line="42" column="23" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="42" selection-end-column="23" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Handler/Moviehandler.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="86" column="25" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="25" />
+        <state relative-caret-position="-822">
+          <caret line="23" column="30" lean-forward="true" selection-start-line="23" selection-start-column="30" selection-end-line="23" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/CategoryType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-12">
+          <caret line="27" column="16" lean-forward="false" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/inc/nav.admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.admin.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="10" lean-forward="false" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
           <folding>
-            <element signature="e#47#77#0#PHP" expanded="false" />
+            <element signature="e#12#32#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Compteur.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/category/form.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="58" column="20" lean-forward="false" selection-start-line="58" selection-start-column="20" selection-end-line="58" selection-end-column="20" />
+        <state relative-caret-position="72">
+          <caret line="16" column="36" lean-forward="true" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/MovieSearchType.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/category/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="127">
-          <caret line="54" column="34" lean-forward="false" selection-start-line="54" selection-start-column="34" selection-end-line="54" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Component/Form/FormConfigBuilderInterface.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="194">
-          <caret line="41" column="20" lean-forward="false" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Subscriber/MovieFormSubscriber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="57" column="0" lean-forward="false" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/main/detailmovie.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="14" lean-forward="false" selection-start-line="27" selection-start-column="14" selection-end-line="27" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin-movie/form.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="51" column="43" lean-forward="false" selection-start-line="51" selection-start-column="43" selection-end-line="51" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Listener/MovieListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin-actor/form.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="380">
-          <caret line="28" column="8" lean-forward="false" selection-start-line="25" selection-start-column="4" selection-end-line="28" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/MovieType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="35" column="33" lean-forward="false" selection-start-line="35" selection-start-column="33" selection-end-line="35" selection-end-column="33" />
+        <state relative-caret-position="468">
+          <caret line="26" column="50" lean-forward="true" selection-start-line="26" selection-start-column="50" selection-end-line="26" selection-end-column="50" />
           <folding>
-            <element signature="e#34#87#0#PHP" expanded="false" />
+            <element signature="e#12#32#0#Twig" expanded="false" />
+            <element signature="e#77#100#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminMovieController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/actor/index.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="386">
-          <caret line="71" column="47" lean-forward="false" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="47" />
+        <state relative-caret-position="504">
+          <caret line="61" column="39" lean-forward="false" selection-start-line="61" selection-start-column="39" selection-end-line="61" selection-end-column="39" />
           <folding>
-            <element signature="e#124#151#0#PHP" expanded="false" />
-            <element signature="e#1637#1654#1#PHP" expanded="false" />
-            <element signature="e#2476#2493#1#PHP" expanded="false" />
+            <element signature="e#2915#2942#0#Twig" expanded="false" />
+            <element signature="e#3094#3116#0#Twig" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/base.html.twig">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Utils/UploadUtils.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="15" column="24" lean-forward="false" selection-start-line="15" selection-start-column="24" selection-end-line="15" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/inc/nav.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="17" column="51" lean-forward="false" selection-start-line="17" selection-start-column="51" selection-end-line="17" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="52" column="35" lean-forward="false" selection-start-line="52" selection-start-column="35" selection-end-line="52" selection-end-column="35" />
+        <state relative-caret-position="540">
+          <caret line="35" column="0" lean-forward="true" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/MovieRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="119" column="29" lean-forward="false" selection-start-line="119" selection-start-column="14" selection-end-line="119" selection-end-column="29" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin-actor/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="714">
-          <caret line="42" column="51" lean-forward="false" selection-start-line="42" selection-start-column="51" selection-end-line="42" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="986">
-          <caret line="62" column="53" lean-forward="false" selection-start-line="62" selection-start-column="8" selection-end-line="62" selection-end-column="53" />
-          <folding>
-            <element signature="e#40#67#0#PHP" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Subscriber/ActorFormSubscriber.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="29" column="27" lean-forward="false" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Category.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="119" column="19" lean-forward="false" selection-start-line="119" selection-start-column="19" selection-end-line="119" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Movie.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="232" column="7" lean-forward="false" selection-start-line="228" selection-start-column="4" selection-end-line="232" selection-end-column="7" />
-          <folding>
-            <element signature="e#36#68#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Handler/Actorhandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="31" column="20" lean-forward="false" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding>
-            <element signature="e#47#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Handler/Formhandler.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="179">
-          <caret line="28" column="20" lean-forward="false" selection-start-line="28" selection-start-column="20" selection-end-line="28" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Listener/ActorListener.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="87" column="0" lean-forward="false" selection-start-line="87" selection-start-column="0" selection-end-line="87" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ActorType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="37" column="14" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="37" selection-end-column="14" />
-          <folding>
-            <element signature="e#34#87#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="19" column="47" lean-forward="false" selection-start-line="19" selection-start-column="47" selection-end-line="19" selection-end-column="47" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Actor.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/inc/render/locales.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="4" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MainController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-34">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Place.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Twig/FunctionExtension.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1021">
-          <caret line="62" column="1" lean-forward="false" selection-start-line="62" selection-start-column="1" selection-end-line="62" selection-end-column="1" />
+        <state relative-caret-position="306">
+          <caret line="51" column="22" lean-forward="false" selection-start-line="51" selection-start-column="22" selection-end-line="51" selection-end-column="22" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/User.php">
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Utils/TranslateService.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="1" lean-forward="false" selection-start-line="10" selection-start-column="1" selection-end-line="10" selection-end-column="1" />
+        <state relative-caret-position="528">
+          <caret line="53" column="69" lean-forward="false" selection-start-line="53" selection-start-column="69" selection-end-line="53" selection-end-column="69" />
+          <folding>
+            <element signature="e#126#167#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/movie/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="38" lean-forward="true" selection-start-line="17" selection-start-column="38" selection-end-line="17" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/tag.es.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/tag.fr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="16" lean-forward="false" selection-start-line="0" selection-start-column="16" selection-end-line="0" selection-end-column="16" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/config/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="92" column="29" lean-forward="false" selection-start-line="92" selection-start-column="29" selection-end-line="92" selection-end-column="29" />
+        <state relative-caret-position="196">
+          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="12" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="39" lean-forward="false" selection-start-line="10" selection-start-column="39" selection-end-line="10" selection-end-column="39" />
+        <state relative-caret-position="252">
+          <caret line="14" column="29" lean-forward="false" selection-start-line="14" selection-start-column="29" selection-end-line="14" selection-end-column="29" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/UserController.php">
+    <entry file="file://$PROJECT_DIR$/app/config/services.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="12" column="29" lean-forward="false" selection-start-line="12" selection-start-column="29" selection-end-line="12" selection-end-column="29" />
+        <state relative-caret-position="196">
+          <caret line="13" column="28" lean-forward="false" selection-start-line="13" selection-start-column="22" selection-end-line="13" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppCache.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/tag.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="0" lean-forward="true" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/AppKernel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-318">
+          <caret line="8" column="5" lean-forward="true" selection-start-line="8" selection-start-column="5" selection-end-line="8" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/TagType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="24" column="5" lean-forward="true" selection-start-line="24" selection-start-column="5" selection-end-line="24" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminMovieController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-342">
+          <caret line="25" column="5" lean-forward="false" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
           <folding>
-            <element signature="e#39#98#0#PHP" expanded="true" />
-            <element signature="e#730#746#1#PHP" expanded="true" />
-            <element signature="e#1359#1375#1#PHP" expanded="true" />
+            <element signature="e#2478#2501#1#PHP" expanded="true" />
+            <element signature="e#2698#2726#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PlaceController.php">
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.en.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="45" column="4" lean-forward="false" selection-start-line="45" selection-start-column="4" selection-end-line="45" selection-end-column="4" />
+        <state relative-caret-position="224">
+          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/messages.fr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="54" column="14" lean-forward="false" selection-start-line="54" selection-start-column="14" selection-end-line="54" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/tag/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="58" lean-forward="true" selection-start-line="10" selection-start-column="58" selection-end-line="10" selection-end-column="58" />
           <folding>
-            <element signature="e#40#99#0#PHP" expanded="true" />
-            <element signature="e#690#707#1#PHP" expanded="true" />
-            <element signature="e#1527#1544#1#PHP" expanded="true" />
+            <element signature="e#12#32#0#Twig" expanded="false" />
+            <element signature="e#78#96#0#Twig" expanded="false" />
+            <element signature="e#1249#1274#0#Twig" expanded="false" />
+            <element signature="e#1428#1448#0#Twig" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Listener/TagListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="424">
+          <caret line="83" column="0" lean-forward="false" selection-start-line="83" selection-start-column="0" selection-end-line="83" selection-end-column="0" />
+          <folding>
+            <element signature="e#46#70#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/main/detailmovie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" column="37" lean-forward="false" selection-start-line="11" selection-start-column="37" selection-end-line="11" selection-end-column="37" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/movie/form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="303">
+          <caret line="68" column="44" lean-forward="false" selection-start-line="68" selection-start-column="44" selection-end-line="68" selection-end-column="44" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/admin/actor/form.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="89">
+          <caret line="16" column="6" lean-forward="false" selection-start-line="16" selection-start-column="6" selection-end-line="16" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AdminActorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="62" column="0" lean-forward="false" selection-start-line="62" selection-start-column="0" selection-end-line="62" selection-end-column="0" />
+          <folding>
+            <element signature="e#772#801#0#PHP" expanded="true" />
+            <element signature="e#2656#2679#1#PHP" expanded="true" />
+            <element signature="e#2772#2800#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Subscriber/KernelEventSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Category.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="18" column="11" lean-forward="false" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Movie.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="144" column="41" lean-forward="false" selection-start-line="144" selection-start-column="41" selection-end-line="144" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Tag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="116" column="5" lean-forward="true" selection-start-line="116" selection-start-column="5" selection-end-line="116" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Actor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="230" column="7" lean-forward="true" selection-start-line="230" selection-start-column="7" selection-end-line="230" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ActorType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="61" column="7" lean-forward="false" selection-start-line="61" selection-start-column="7" selection-end-line="61" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Listener/ActorListener.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="81" column="9" lean-forward="false" selection-start-line="81" selection-start-column="9" selection-end-line="81" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Subscriber/ActorFormSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-74">
+          <caret line="30" column="34" lean-forward="false" selection-start-line="30" selection-start-column="34" selection-end-line="30" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/MovieType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="504">
+          <caret line="54" column="49" lean-forward="false" selection-start-line="54" selection-start-column="49" selection-end-line="54" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Service/Subscriber/MovieFormSubscriber.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="348">
+          <caret line="38" column="40" lean-forward="true" selection-start-line="38" selection-start-column="40" selection-end-line="38" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/inc/render/movies.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="30" column="64" lean-forward="false" selection-start-line="30" selection-start-column="64" selection-end-line="30" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/forms.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/forms.fr.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="16" column="36" lean-forward="false" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/translations/forms.en.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="17" column="17" lean-forward="false" selection-start-line="17" selection-start-column="17" selection-end-line="17" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Resources/views/main/searchmovie.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="486">
+          <caret line="33" column="8" lean-forward="false" selection-start-line="33" selection-start-column="8" selection-end-line="33" selection-end-column="8" />
+          <folding>
+            <element signature="e#12#26#0#Twig" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/Model/SearchTypeModel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1152">
+          <caret line="69" column="7" lean-forward="false" selection-start-line="69" selection-start-column="7" selection-end-line="69" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/MovieSearchType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="406">
+          <caret line="54" column="53" lean-forward="false" selection-start-line="54" selection-start-column="53" selection-end-line="54" selection-end-column="53" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/MainController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="44" column="30" lean-forward="false" selection-start-line="44" selection-start-column="30" selection-end-line="44" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/MovieRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="54" column="17" lean-forward="false" selection-start-line="54" selection-start-column="17" selection-end-line="54" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>

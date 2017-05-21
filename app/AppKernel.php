@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new AppBundle\AppBundle(),
             new Knp\Bundle\PaginatorBundle\KnpPaginatorBundle(),
             new FOS\RestBundle\FOSRestBundle(),
+	        new Knp\Bundle\SnappyBundle\KnpSnappyBundle(),
+	        new Eko\GoogleTranslateBundle\EkoGoogleTranslateBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

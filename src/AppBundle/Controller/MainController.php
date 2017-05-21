@@ -91,10 +91,11 @@ class MainController extends Controller
         $em = $doctrine->getManager();/*Tout sauf select*/
         $rc = $doctrine->getRepository('AppBundle:Category');/*select*/
 
+		$cats = $rc->findBy(array('published'=>1));
 
         // replace this example code with whatever you need
         return $this->render('main/searchcateg.html.twig', [
-            'categ' => $rc->findAll()
+            'categ' => $cats
         ]);
     }
 

@@ -36,8 +36,6 @@ class Moviehandler extends Formhandler
 
         parent::process();//fais le process de Formhandler et ensuite s'occupe de l'image
 
-
-
         //ajout du film dans la table de décompte de film : j'avoue ne pas avoir compris pourquoi utiliser une table pour ça...
         //je pourrai tout à fait faire un subscriber qui se lance à chaque requête de page et qui fait un count du nombre
         //de film qu'il y'a dans la base... ce n'est pas si lourd que ça à faire :)
@@ -83,9 +81,17 @@ class Moviehandler extends Formhandler
 
         $compteur = new Compteur();
         $em = $this->doctrine->getManager();
+
+        // TODO faire fonctionner
         $client = $em->getRepository('AppBundle:Compteur')->find(1);
-        $client->setCompteur($nbFilm);
-        $em->flush();
+        if( !$client){
+        	$compteur->setCompteur($nbFilm);
+        	$em->persist($compteur);
+        }else
+        {
+	        $client->setCompteur($nbFilm);
+	        $em->flush();
+        }
     }
 
 

@@ -1,0 +1,46 @@
+{% extends 'base.simple.html.twig' %}
+
+{% block body %}
+
+   <div class="row">
+      <div class="col-xs-12">
+         <table id="basket" class="table table-striped">
+            <th>{{ "title" | trans | capitalize }}</th>
+            <th>{{ "category" | trans | capitalize }}</th>
+            <th>{{ "price_unit" | trans | capitalize }}</th>
+            <th>{{ "quantity" | trans | capitalize }}</th>
+            <th>{{ "price_total" | trans | capitalize }}</th>
+
+
+            {% for mov in records %}
+               <tr class="movie" id="movie_{{ mov.id }}">
+                  <td>
+                     {{ mov.title }}
+                  </td>
+                  <td>
+                     {{ mov.category.name }}
+                  </td>
+                  <td>
+                     {{ mov.price | localizedcurrency('eur') }}
+                  </td>
+                  <td>
+                     {{ attribute(basket, mov.id) }}
+                  </td>
+                  <td>
+                     {%  set price_total = mov.price * attribute(basket, mov.id)  %}
+                     {{ price_total | localizedcurrency('eur') }}
+                  </td>
+               </tr>
+            {% endfor %}
+         </table>
+         <p>{{ total_price | localizedcurrency('eur') }}</p>
+      </div>
+   </div>
+
+{% endblock %}
+
+{% block javascripts %}
+{% endblock %}
+
+{% block stylesheets %}
+{% endblock %}

@@ -9,16 +9,19 @@ use Doctrine\Bundle\DoctrineBundle\Registry;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
 
 class ActorListener
 {
     private $slugService;
     private $fold;
     private $doctrine;
+    private $authorizationChecker;
 
-    public function __construct(Registry $doctrine, \AppBundle\Service\Utils\SlugService $slugService, $fold ){/*on fait un construct quand il appelle un parametre qui est passé au constructeur*/
+    public function __construct(Registry $doctrine, \AppBundle\Service\Utils\SlugService $slugService, AuthorizationChecker $authorizationChecker, $fold ){/*on fait un construct quand il appelle un parametre qui est passé au constructeur*/
         $this->slugService = $slugService;
         $this->doctrine = $doctrine;
+        $this->authorizationChecker = $authorizationChecker;
         $this->fold = $fold;
     }
 
@@ -28,12 +31,10 @@ class ActorListener
         $slug           =$this->_generateSlug($actor->getNom());
         $actor->setAlias($slug);
 
-        $this->_categsLink($actor);
+	    $actor->setPublished( $this->authorizationChecker->isGranted('ROLE_ADMIN') ? $actor->getPublished() : false );
 
+        //$this->_categsLink($actor);
 
-
-//print_r($actor->getCategories());
-//die();
     }
 
     /*evenement prepersist : evenement qui se déclenche à l'update*/
@@ -51,8 +52,7 @@ class ActorListener
             $actor->setImage($actor->oldPoster);
         }
 
-        $this->_categsLink($actor);
-
+        //$this->_categsLink($actor);
 
     }
 
@@ -68,6 +68,7 @@ class ActorListener
     }
 
 
+    // this is insane >___<"
     private function _categsLink($actor){
 
 //        print_r($actor->getCategories());die();

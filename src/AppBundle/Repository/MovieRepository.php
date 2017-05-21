@@ -39,14 +39,25 @@ class MovieRepository extends \Doctrine\ORM\EntityRepository
         else
             $categ = '';
 
+	    if (array_key_exists('tags', $request))
+	    {
+		    $tags = $request['tags'];
+		    $tags = implode(',', $tags);
+	    }
+	    else
+		    $tags = '';
+
         $results = $this
             ->createQueryBuilder("movie")//construction de requête en DQL qui attends en param l'alias de l'entité
             //si on ne fait pas de select il fait toutes les sous requêtes avec et renvoie une entité.
             // Sinon, il renvoi un tableau de tableau
             ->join('movie.category', 'category');
+        if($tags)
+        	$results->join('movie.tags', 'tag');
 
         if($title!='')$results = $results->andWhere('movie.title like :title')->setParameter('title', '%'.$title.'%');
         if($categ!='')$results = $results->andWhere('category.id = :categName')->setParameter('categName', $categ);
+        if($tags!='')$results = $results->andWhere('tag.id IN( :tags ) ')->setParameter('tags', $tags);
         if($releaseDate!='')$results = $results->andWhere('YEAR(movie.releaseDate) = :date')->setParameter('date', $releaseDate);
 
         //PETIT NEW SYMPATIQUE A SAVOIR : j'ai passé plusieurs heures avant de comprendre que doctrine de base

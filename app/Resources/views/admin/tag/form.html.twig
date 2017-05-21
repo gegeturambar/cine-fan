@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+    <p>
+        {% if form.vars.value.id == false %}
+            {{ 'tag.title_form_create' | trans | capitalize }}
+        {% else %}
+            {{ 'tag.title_form_update' | trans | capitalize }}
+        {% endif %}
+    </p>
+    {#
+        form_start: début du formulaire
+        form_end: fin du formulaire
+        form_label: label champ
+        form_widget: champ
+        form_errors: affiche erreurs
+    #}
+    {{ form_start(form, { 'attr' : {'novalidate' : 'novalidate'} }) }}
+
+
+    {{ form_errors(form.name) }}
+    <p>
+        {{ form_label(form.name, 'tag.name' | trans | title ~ ' : ') }}
+        {{ form_widget(form.name) }}
+    </p>
+
+    {% if is_granted('ROLE_ADMIN') %}
+        <p>
+            {{ form_label(form.published, 'tag.published' | trans | title ~ ' : ') }}
+            {{ form_widget(form.published) }}
+        </p>
+    {% endif %}
+
+    {#<p>
+        {{ form_label(form.slug, 'form.tag.slug' | trans | title ~ ' : ') }}
+        {{ form_widget(form.slug) }}
+    </p>#}
+
+    {%  set buttontext = 'tag.tag' | trans %}
+
+    {% if form.vars.value.id == false %}
+        <p><input type="submit" value="{{ 'submit.create' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% else %}
+        <p><input type="submit" value="{{ 'submit.update' | trans( {'%value%' : buttontext }, 'forms') | title}}"/></p>
+    {% endif %}
+
+    {{ form_end(form) }}
+
+
+
+{% endblock %}

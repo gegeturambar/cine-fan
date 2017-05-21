@@ -16,19 +16,24 @@
     {{ form_errors(form.title) }}
     {{ form_errors(form.category) }}
     <p>
-        {{ form_label(form.title, 'par titre' | trans | title ~ ' : ') }}
+        {{ form_label(form.title, 'filter.title' | trans({}, 'forms') | title ~ ' : ') }}
         {{ form_widget(form.title) }}
     </p>
     <p>
-        {{ form_label(form.releaseDate, 'par date' | trans | title ~ ' : ') }}
+        {{ form_label(form.releaseDate, 'filter.date' | trans({}, 'forms') | title ~ ' : ') }}
         {{ form_widget(form.releaseDate) }}
     </p>
     <p>
-    {{ form_label(form.category, 'par catégorie' | trans | title ~ ' : ') }}
+    {{ form_label(form.category, 'filter.category' | trans({}, 'forms') | title ~ ' : ') }}
     {{ form_widget(form.category) }}
     </p>
 
-    <p><input type="submit" value="{{ 'Rechercher' | trans( {}, 'forms') | title}}"/></p>
+    <p>
+        {{ form_label(form.tags, 'filter.tags' | trans({}, 'forms') | title ~ ' : ') }}
+        {{ form_widget(form.tags) }}
+    </p>
+
+    <p><input type="submit" value="{{ 'submit.search' | trans( {}, 'forms') | title}}"/></p>
 
     {{ form_end(form) }}
 

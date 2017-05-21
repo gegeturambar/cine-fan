@@ -11,6 +11,10 @@ services:
     app.service.utils.slug:
             class: AppBundle\Service\Utils\SlugService
 
+    app.service.utils.translate:
+                class: AppBundle\Service\Utils\TranslateService
+                arguments: [ "@kernel" ]
+
     app.service.handler.actorhandler:
             class: AppBundle\Service\Handler\Actorhandler
             arguments: ["@doctrine", "@app.service.utils.upload"]
@@ -38,19 +42,25 @@ services:
 
     app.service.listener.category:
             class: AppBundle\Service\Listener\CategoryListener
-            arguments: [ "@app.service.utils.slug" ]
+            arguments: [ "@app.service.utils.slug","@security.authorization_checker" ]
             tags:
                 - { name: doctrine.orm.entity_listener}
 
+    app.service.listener.tag:
+                class: AppBundle\Service\Listener\TagListener
+                arguments: [ "@app.service.utils.slug","@security.authorization_checker",'@request_stack', "@app.service.utils.translate", "%locales%", "%locale%" ]
+                tags:
+                    - { name: doctrine.orm.entity_listener}
+
     app.service.listener.movie:
             class: AppBundle\Service\Listener\MovieListener
-            arguments: [ "@app.service.utils.slug", "%upload_dir%" ]
+            arguments: [ "@app.service.utils.slug", "@security.authorization_checker","%upload_dir%" ]
             tags:
                 - { name: doctrine.orm.entity_listener}
 
     app.service.listener.actor:
             class: AppBundle\Service\Listener\ActorListener
-            arguments: [ "@doctrine", "@app.service.utils.slug", "%upload_dir%" ]
+            arguments: [ "@doctrine", "@app.service.utils.slug", "@security.authorization_checker", "%upload_dir%" ]
             tags:
                 - { name: doctrine.orm.entity_listener}
 
@@ -61,6 +71,57 @@ services:
                 - { name: form.type }
 
     app.service.twig.allmoviesservice:
-                class: AppBundle\Service\Twig\AllMoviesService
-                arguments: ["@doctrine" ]
+            class: AppBundle\Service\Twig\AllMoviesService
+            arguments: ["@doctrine" ]
 
+
+    app.services.userhandler:
+            class: AppBundle\Service\Handler\UserHandler
+            arguments: [ '@doctrine','@security.password_encoder' ]
+
+    app.services.suscriber.orderevents:
+        class: AppBundle\Service\Subscriber\OrderEventsSubscriber
+        arguments: [ '@knp_snappy.pdf', '@twig' , '@app.services.basket', '@doctrine' ]
+        tags:
+            - { name: kernel.event_subscriber }
+
+    app.services.twig:
+        class: AppBundle\Service\Twig\FunctionExtension
+        arguments: [ '@twig','@request_stack','@router','@session','@doctrine','@app.services.basket','%locales%' ]
+        tags:
+            - { name: twig.extension }
+
+    app.form.type.category:
+        class: AppBundle\Form\CategoryType
+        arguments: ["@security.authorization_checker"]
+        tags:
+            - { name: form.type, alias: appbundle_category }
+
+    app.form.type.tag:
+            class: AppBundle\Form\TagType
+            arguments: ["@security.authorization_checker"]
+            tags:
+                - { name: form.type, alias: appbundle_tag }
+
+    app.form.type.user:
+            class: AppBundle\Form\UserType
+            arguments: ["@security.authorization_checker"]
+            tags:
+                - { name: form.type, alias: appbundle_user }
+
+    app.form.type.actor:
+            class: AppBundle\Form\ActorType
+            arguments: ["@security.authorization_checker"]
+            tags:
+                - { name: form.type, alias: appbundle_actor }
+
+    app.form.type.movie:
+            class: AppBundle\Form\MovieType
+            arguments: ["@security.authorization_checker"]
+            tags:
+                - { name: form.type, alias: appbundle_movie }
+
+
+    app.services.basket:
+        class: AppBundle\Service\Basket\Basket
+        arguments: [ '@session','@doctrine' ]

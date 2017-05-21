@@ -36,11 +36,27 @@ class Category
      */
     private $slug;
 
+	/**
+	* @ORM\Column(name="published", type="boolean")
+	*/
+	private $published = false;
 
-    /**
-     * @ORM\ManyToMany(targetEntity="Actor", mappedBy="categories")
-     */
-    private $actors;
+	/**
+	 * @return mixed
+	 */
+	public function getPublished()
+	{
+		return $this->published;
+	}
+
+	/**
+	 * @param mixed $published
+	 */
+	public function setPublished($published)
+	{
+		$this->published = $published;
+	}
+
 
     /**
      * Get id
@@ -100,30 +116,5 @@ class Category
         return $this->slug;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getActors()
-    {
-        return $this->actors;
-    }
-
-    /**
-     * @param mixed $actors
-     */
-    public function setActors($actors)
-    {
-        $this->actors = $actors;
-    }
-
-    /**
-     * Remove actor
-     *
-     * @param \AppBundle\Entity\Actor $actor
-     */
-    public function removeActor(\AppBundle\Entity\Actor $actor)
-    {
-        $this->actors->removeElement($actor);
-    }
 }
 

@@ -7,13 +7,17 @@ use AppBundle\Service\SlugService;
 use Doctrine\Common\Persistence\Event\LifecycleEventArgs;
 use Doctrine\ORM\Event\PreUpdateEventArgs;
 use Doctrine\ORM\Mapping\PostPersist;
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
 
 class CategoryListener
 {
-     private $slugService;
+	private $slugService;
 
-    public function __construct(\AppBundle\Service\Utils\SlugService $slugService ){/*on fait un construct quand il appelle un parametre qui est passé au constructeur*/
+	private $authorizationChecker;
+
+    public function __construct(\AppBundle\Service\Utils\SlugService $slugService, AuthorizationChecker $authorizationChecker ){/*on fait un construct quand il appelle un parametre qui est passé au constructeur*/
         $this->slugService = $slugService;
+        $this->authorizationChecker = $authorizationChecker;
     }
 
     /*evenement prepersist : evenement qui se déclenche à l'insert*/
@@ -21,7 +25,7 @@ class CategoryListener
 
         $slug           =$this->_generateSlug($category->getName());
         $category->setSlug($slug);
-        //dump($category); exit;
+	    $category->setPublished( $this->authorizationChecker->isGranted('ROLE_ADMIN') ? $category->getPublished() : false );
     }
 
     /*evenement prepersist : evenement qui se déclenche à l'update*/

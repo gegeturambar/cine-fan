@@ -9,14 +9,11 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 
 /*ANNOTATION AU DESSUS DE LA CLASS : VALABLE POUR TOUTE LA CLASS*/
-/**
- * @Route("/admin/actor")
- */
 
 class AdminActorController extends Controller
 {
     /**
-     * @Route("/", name="app.admin.actor.index")
+     * @Route("/admin/actor", name="app.admin.actor.index")
      */
     public function indexAction(Request $request)
     {
@@ -26,13 +23,13 @@ class AdminActorController extends Controller
 
 
         // replace this example code with whatever you need
-        return $this->render('admin-actor/index.html.twig', [
+        return $this->render('admin/actor/index.html.twig', [
             'actors' => $rc->findAll()
         ]);
     }
 
     /**
-     * @Route("/delete/{id}", name="app.admin.actor.delete", requirements={"id" = "\d+"})
+     * @Route("/admin/actor/delete/{id}", name="app.admin.actor.delete", requirements={"id" = "\d+"})
      */
     public function deleteAction(Request $request, $id)
     {
@@ -50,8 +47,9 @@ class AdminActorController extends Controller
     }
 
     /**
-     * @Route("/form", name="app.admin.actor.form")
-     * @Route("/form/update/{id}", name="app.admin.actor.form.update", requirements={"id" = "\d+"})
+     * @Route("/actor/add/", name="app.actor.form")
+     * @Route("/admin/actor/add", name="app.admin.actor.form")
+     * @Route("/admin/actor/update/{id}", name="app.admin.actor.form.update", requirements={"id" = "\d+"})
      */
     public function formAction(Request $request, $id=null)
     {
@@ -62,8 +60,6 @@ class AdminActorController extends Controller
         // creation d'un formulaire : on a l'entité et la class du formulaire... recette de cuisine !
         $entity = $id ? $rc->find($id) : new Actor();
         $entityType     = ActorType::class;
-
-
 
         $form = $this->createForm($entityType, $entity);
         $form->handleRequest($request);//récupération de la saisie
@@ -76,7 +72,7 @@ class AdminActorController extends Controller
             $actorHandler->process();
             $translate  = $this->get('translator');
 
-            $add        = $id ? $translate->trans('form.actor.message.update') : $translate->trans('form.actor.message.ajout');
+            $add        = $id ? $translate->trans('actor.flash_messages.update') : $translate->trans('actor.flash_messages.add');
             $this->addFlash('success', $add);
             return $this->redirectToRoute('app.admin.actor.index');
         }
@@ -84,7 +80,7 @@ class AdminActorController extends Controller
 
         //envoi du formulaire sous forme de vue
 
-        return $this->render('admin-actor/form.html.twig', [
+        return $this->render('admin/actor/form.html.twig', [
             'form'=>$form->createView()
         ]);
     }

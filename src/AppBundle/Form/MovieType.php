@@ -8,9 +8,17 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
 
 class MovieType extends AbstractType
 {
+	private $authorizationChecker;
+
+	public function __construct(AuthorizationChecker $authorizationChecker)
+	{
+		$this->authorizationChecker = $authorizationChecker;
+	}
+
     /**
      * {@inheritdoc}
      */
@@ -31,7 +39,17 @@ class MovieType extends AbstractType
                 "expanded"    => true,
                 "multiple"      => false //checkbox
             ])
+	        ->add('tags', EntityType::class, [
+		        "class" => "AppBundle\Entity\Tag",
+		        "choice_label" => 'name',
+		        "expanded"    => true,
+		        "multiple"      => true //checkbox
+	        ])
         ;
+
+	    if($this->authorizationChecker->isGranted('ROLE_ADMIN')){
+		    $builder->add('published');
+	    }
 
         //ajout d'un souscripteur
         $builder->addEventSubscriber(new MovieFormSubscriber());
