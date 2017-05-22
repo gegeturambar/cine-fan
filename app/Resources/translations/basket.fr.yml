@@ -1,2 +1,5 @@
 add: ajouter
 remove: enlever
+price_unit: prix unitaire
+price_total: prix total
+quantity: quantité

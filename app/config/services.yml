@@ -13,7 +13,7 @@ services:
 
     app.service.utils.translate:
                 class: AppBundle\Service\Utils\TranslateService
-                arguments: [ "@kernel", "@translator.default", '@session' ]
+                arguments: [ "@kernel", "@translator.default",'@request_stack', '@session', '%locales%','%locale%', '%locale_currency%' ]
 
     app.service.handler.actorhandler:
             class: AppBundle\Service\Handler\Actorhandler
@@ -117,7 +117,7 @@ services:
 
     app.form.type.movie:
             class: AppBundle\Form\MovieType
-            arguments: ["@security.authorization_checker"]
+            arguments: ["@security.authorization_checker","@app.service.utils.translate"]
             tags:
                 - { name: form.type, alias: appbundle_movie }
 

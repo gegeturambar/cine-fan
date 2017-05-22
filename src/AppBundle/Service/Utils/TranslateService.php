@@ -12,6 +12,7 @@ namespace AppBundle\Service\Utils;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\Config\FileLocatorInterface;
 use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Session\Session;
 use Symfony\Component\HttpKernel\Kernel;
 use Symfony\Component\Translation\Translator;
@@ -25,11 +26,48 @@ class TranslateService
 
 	private $session;
 
-	public function __construct(Kernel $kernel, Translator $translator, Session $session)
+	private $request;
+	private  $locales;
+	private  $locale;
+	private  $localeCurrency;
+
+	public function __construct(Kernel $kernel, Translator $translator, RequestStack $request, Session $session, array $locales, $locale, $localeCurrency)
 	{
 		$this->translator = $translator;
 		$this->kernel = $kernel;
+		$this->request = $request->getCurrentRequest();
 		$this->session = $session;
+		$this->locales = $locales;
+		$this->locale = $locale;
+		$this->localeCurrency = $localeCurrency;
+	}
+
+	function translatePriceProxy($price, $fromLocaleToCurrent = true){
+		if(is_null($this->request))
+			return $price;
+		$currentLocale = $this->request->getLocale();
+		if($this->locale == $currentLocale)
+			return $price;
+
+		// get currentCurrency
+		foreach ($this->locales as $locale)
+		{
+			if($locale['code'] == $currentLocale){
+				$currentCurrency = $locale['currency'];
+				if($fromLocaleToCurrent)
+					return $this->translatePrice($price,$currentCurrency,$this->localeCurrency['currency']);
+				else
+					return $this->translatePrice($price,$this->localeCurrency['currency'],$currentCurrency);
+			}
+		}
+	}
+
+	function translatePriceFromCurrentToLocale($value){
+		return $this->translatePriceProxy($value,false);
+	}
+
+	function translatePriceFromLocaleToCurrent($value){
+		return $this->translatePriceProxy($value);
 	}
 
 	function translatePrice($value, $to, $from)

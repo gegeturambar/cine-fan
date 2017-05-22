@@ -3,8 +3,10 @@
 namespace AppBundle\Form;
 
 use AppBundle\Service\Subscriber\MovieFormSubscriber;
+use AppBundle\Service\Utils\TranslateService;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\CallbackTransformer;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -15,9 +17,12 @@ class MovieType extends AbstractType
 {
 	private $authorizationChecker;
 
-	public function __construct(AuthorizationChecker $authorizationChecker)
+	private $translateService;
+
+	public function __construct(AuthorizationChecker $authorizationChecker, TranslateService $translateService)
 	{
 		$this->authorizationChecker = $authorizationChecker;
+		$this->translateService = $translateService;
 	}
 
     /**
@@ -42,15 +47,30 @@ class MovieType extends AbstractType
             ])
 	        ->add('tags', EntityType::class, [
 		        "class" => "AppBundle\Entity\Tag",
-		        "choice_label" => 'name',
+		        "choice_label" => 'slug',
 		        "expanded"    => true,
-		        "multiple"      => true //checkbox
+		        "multiple"      => true, //checkbox,
+		        'choice_translation_domain' => 'tag'
 	        ])
         ;
+
 
 	    if($this->authorizationChecker->isGranted('ROLE_ADMIN')){
 		    $builder->add('published');
 		    $builder->add('price', NumberType::class);
+
+		    $builder->get('price')
+			    ->addModelTransformer(
+				    new CallbackTransformer(
+					    function ($priceLocale){
+						    //transform price from locale to current
+						    return $this->translateService->translatePriceFromLocaleToCurrent($priceLocale);
+					    },
+					    function ($priceCurrent){
+						    return $this->translateService->translatePriceFromCurrentToLocale($priceCurrent);
+					    }
+				    )
+			    );
 	    }
 
         //ajout d'un souscripteur

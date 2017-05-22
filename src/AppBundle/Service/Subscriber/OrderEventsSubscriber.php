@@ -65,7 +65,7 @@ class OrderEventsSubscriber implements EventSubscriberInterface
         try {
             $this->snappy->generateFromHtml($html, 'upload/'.$pdf_name);
         }catch(\Exception $ex){
-            //echo $ex->getMessage();
+            echo $ex->getMessage();die();
         }
         $event->setPdfName($pdf_name);
 

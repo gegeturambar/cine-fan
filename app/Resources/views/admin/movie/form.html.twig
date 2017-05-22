@@ -73,7 +73,7 @@
     {% if is_granted('ROLE_ADMIN') %}
         <br>
         <p>
-            {{ form_label(form.price, 'movie.price' | trans | title ~ ' : ') }}
+            {{ form_label(form.price, 'movie.price' | trans | title ~ ' (' ~ render_locale_currency(true)  ~') : ') }}
             {{ form_widget(form.price) }}
         </p>
         <br>

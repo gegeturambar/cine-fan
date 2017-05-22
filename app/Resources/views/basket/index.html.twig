@@ -5,11 +5,12 @@
     <div class="row">
         <div class="col-xs-12">
             <table id="basket" class="table table-striped">
-                <th>{{ "title" | trans | capitalize }}</th>
-                <th>{{ "category" | trans | capitalize }}</th>
-                <th>{{ "price_unit" | trans | capitalize }}</th>
-                <th>{{ "quantity" | trans | capitalize }}</th>
-                <th>{{ "price_total" | trans | capitalize }}</th>
+                <th>{{ "movie.title" | trans | capitalize }}</th>
+                <th>{{ "movie.category" | trans | capitalize }}</th>
+                <th>{{ "price_unit" | trans( {} , 'basket') | capitalize }}</th>
+                <th>{{ "quantity" | trans( {} , 'basket') | capitalize }}</th>
+                <th>{{ "price_total" | trans( {} , 'basket') | capitalize }}</th>
+                <th>{{ "actions" | trans | capitalize }}</th>
 
 
                 {% for mov in records %}
@@ -20,20 +21,22 @@
                         <td>
                             {{ mov.category.name }}
                         </td>
-                        <td>
-                            {{ mov.price }}
+                        <td >
+                            <span class="unit_price">{{ translate_price(mov.price) }}</span>
+                            <span>{{ render_locale_currency(true) }} </span>
                         </td>
-                        <td>
+                        <td><span class="quantity">
                             {{ attribute(basket, mov.id) }}
+                            </span>
+                        </td>
+                        <td >
+                            {%  set price_total = mov.price * attribute(basket, mov.id)  %}
+                            <span class="total_price">{{ translate_price(price_total) }}</span>
+                            <span>{{ render_locale_currency(true) }}</span>
                         </td>
                         <td>
-                            {{ mov.price * attribute(basket, mov.id) }}
-                        </td>
-                        <td>
-                            <button class="btn addTobasket" data-id="{{ mov.id }}" data-price="{{ mov.price }}">{{ 'basket.add' | trans | capitalize }}</button>
-                        </td>
-                        <td>
-                            <button class="btn removeFrombasket" data-id="{{ mov.id }}" data-price="{{ mov.price }}">{{ 'basket.remove' | trans | capitalize }}</button>
+                            <button class="btn addTobasket" data-id="{{ mov.id }}" data-price="{{ mov.price }}">{{ 'add' | trans( {} , 'basket') | capitalize }}</button>
+                            <button class="btn removeFrombasket" data-id="{{ mov.id }}" data-price="{{ mov.price }}">{{ 'remove' | trans( {} , 'basket') | capitalize }}</button>
                         </td>
                     </tr>
                 {% endfor %}

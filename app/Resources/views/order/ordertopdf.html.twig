@@ -5,12 +5,11 @@
    <div class="row">
       <div class="col-xs-12">
          <table id="basket" class="table table-striped">
-            <th>{{ "title" | trans | capitalize }}</th>
-            <th>{{ "category" | trans | capitalize }}</th>
-            <th>{{ "price_unit" | trans | capitalize }}</th>
-            <th>{{ "quantity" | trans | capitalize }}</th>
-            <th>{{ "price_total" | trans | capitalize }}</th>
-
+            <th>{{ "movie.title" | trans | capitalize }}</th>
+            <th>{{ "movie.category" | trans | capitalize }}</th>
+            <th>{{ "price_unit" | trans( {}, 'basket') | capitalize }}</th>
+            <th>{{ "quantity" | trans( {}, 'basket') | capitalize }}</th>
+            <th>{{ "price_total" | trans( {}, 'basket') | capitalize }}</th>
 
             {% for mov in records %}
                <tr class="movie" id="movie_{{ mov.id }}">
@@ -21,19 +20,19 @@
                      {{ mov.category.name }}
                   </td>
                   <td>
-                     {{ mov.price | localizedcurrency('eur') }}
+                      {{ translate_price(mov.price) ~ " " ~ render_locale_currency(true) }}
                   </td>
                   <td>
                      {{ attribute(basket, mov.id) }}
                   </td>
                   <td>
                      {%  set price_total = mov.price * attribute(basket, mov.id)  %}
-                     {{ price_total | localizedcurrency('eur') }}
+                      {{ translate_price(price_total) ~ " " ~ render_locale_currency(true) }}
                   </td>
                </tr>
             {% endfor %}
          </table>
-         <p>{{ total_price | localizedcurrency('eur') }}</p>
+         {% include 'basket/basket_price.html.twig' %}
       </div>
    </div>
 

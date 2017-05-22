@@ -4,11 +4,9 @@
         <meta charset="UTF-8" />
         <title>{% block title %}Cinefan for the fun !{% endblock %}</title>
 
-        <link rel="stylesheet" href="{{ asset('css/reset.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/flag-icon.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-        {% block stylesheets %}{% endblock %}
+
+        {% block stylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>

@@ -22,7 +22,7 @@
             {% endif %}
 
             <p>
-                <label>{{ "movie.price" | trans }} : </label> {{ movie.price }}
+                <label>{{ "movie.price" | trans }} : </label> {{ translate_price(mov.price) ~ " " ~ render_locale_currency(true) }}
             </p>
         </div>
         <div class="col-lg-3">

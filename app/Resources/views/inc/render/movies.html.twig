@@ -19,7 +19,8 @@
                             {{ mov.slug }}
                         </td>
                         <td>
-                            {{ mov.price }}
+                            {{ translate_price(mov.price) | raw }}
+                            {{ render_locale_currency(true) | raw }}
                         </td>
                         <td>
                             {{ mov.category.name }}

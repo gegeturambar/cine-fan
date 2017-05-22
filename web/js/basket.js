@@ -53,6 +53,8 @@ let Basket = function(){
             let data = JSON.parse(xhr.responseText);
             htmlContent = '';
             updateTotalPrice();
+            updateTotalPrices();
+            updateQuantity();
         }
     }
 
@@ -62,6 +64,44 @@ let Basket = function(){
             totalprice.textContent = parseFloat(totalprice.textContent) + parseFloat(price);
         }else{
             totalprice.textContent = parseFloat(totalprice.textContent) - parseFloat(price);
+        }
+    }
+
+    function updateTotalPrices(){
+        let totalprice = document.querySelectorAll('.total_price');
+        if(action == 'add') {
+            for( i = 0; i < totalprice.length; i++){
+                let item = totalprice[i];
+                item.textContent = parseFloat(item.textContent) + parseFloat(price);
+                if(item.textContent < 0)
+                    item.textContent = 0;
+            }
+        }else{
+            for( i = 0; i < totalprice.length; i++){
+                let item = totalprice[i];
+                item.textContent = parseFloat(item.textContent) - parseFloat(price)
+                if(item.textContent < 0)
+                    item.textContent = 0;
+            }
+        }
+    }
+
+    function updateQuantity(){
+        let quantity = document.querySelectorAll('.quantity');
+        if(action == 'add') {
+            for( i = 0; i < quantity.length; i++){
+                let item = quantity[i];
+                item.textContent = parseInt(item.textContent) + 1;
+                if(item.textContent < 0)
+                    item.textContent = 0;
+            }
+        }else{
+            for( i = 0; i < quantity.length; i++){
+                let item = quantity[i];
+                item.textContent = parseInt(item.textContent) -1
+                if(item.textContent < 0)
+                    item.textContent = 0;
+            }
         }
     }
 

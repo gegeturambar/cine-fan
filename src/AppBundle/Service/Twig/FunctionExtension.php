@@ -87,7 +87,8 @@ class FunctionExtension extends \Twig_Extension
 		}
 	}
 
-	public function translatePrice($price){
+	// translatePrice from locale to current by default
+	public function translatePrice($price, $fromLocalToCurrent = true){
 		if(is_null($this->request))
 			return $price;
 		$currentLocale = $this->request->getLocale();
@@ -99,7 +100,10 @@ class FunctionExtension extends \Twig_Extension
 		{
 			if($locale['code'] == $currentLocale){
 				$currentCurrency = $locale['currency'];
-				return $this->translateService->translatePrice($price,$currentCurrency,$this->localeCurrency['currency']);
+				if($fromLocalToCurrent)
+					return $this->translateService->translatePrice($price,$currentCurrency,$this->localeCurrency['currency']);
+				else
+					return $this->translateService->translatePrice($price,$this->localeCurrency['currency'],$currentCurrency);
 			}
 		}
 	}

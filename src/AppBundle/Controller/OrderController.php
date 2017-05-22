@@ -42,6 +42,7 @@ class OrderController extends Controller
         $eventDispatcher->dispatch(OrderEvents::ORDER_FINALISATION, $orderFinalisationEvent);
 
         $pdf_name = $orderFinalisationEvent->getPdfName();
+
         return $this->render('order/index.html.twig',[
             "pdffile"=>$pdf_name
         ]) ;

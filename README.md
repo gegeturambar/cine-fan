@@ -8,5 +8,9 @@ En local, tout marchait bien, si vous rencontrez un quelquonque problème c'est 
 
 je n'ai pas mis un @Assert\Length sur le titre du film, car je ne trouvais pas d'exemple de film avec plus de 10 caractères ! -mais j'ai donc mis un notBlank sur le title
 
+Pour voir fonctionner la génération de pdf, il faut installer la bibliothèque wkhtmltopdf avec la commande =>
+ 
+sudo apt-get install wkhtmltopdf
+
 
 Merci, bonne soirée !
