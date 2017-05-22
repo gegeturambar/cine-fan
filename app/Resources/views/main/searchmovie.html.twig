@@ -40,12 +40,12 @@
     <table class="table table-striped table-inverse">
         <thead class="thead-default">
         <tr>
-            <th>Nom</th>
-            <th>Date de sortie</th>
-            <th>Image</th>
-            <th>Catégorie</th>
-            <th>Alias</th>
-            <th>Actions</th>
+            <th>{{ "movie.title" | trans | capitalize }}</th>
+            <th>{{ "movie.releaseDate" | trans | capitalize }}</th>
+            <th>{{ "movie.poster" | trans | capitalize }}</th>
+            <th>{{ "movie.category" | trans | capitalize }}</th>
+            <th>{{ "movie.price" | trans | capitalize }}</th>
+            <th>{{ "actions" | trans | capitalize }}</th>
         </tr>
         </thead>
         <tbody>
@@ -68,12 +68,18 @@
                     {{ movie.category.name }}
                 </td>
                 <td>
-                    {{ movie.slug }}
+                    {{ translate_price(movie.price) | raw }}
+                    {{ render_locale_currency(true) | raw }}
                 </td>
-                <td>
-                    <a href="{{url('app.admin.movie.form.update', {'id' : movie.id })}}" type="button" class="btn btn-primary">{{ 'Modifier' | trans }}</a>
-                    <a href="{{url('app.admin.movie.delete', {'id' : movie.id })}}" type="button" class="btn btn-danger">{{ 'Supprimer' | trans }}</a>
-                </td>
+                {% if is_granted('ROLE_ADMIN')  %}
+                    <td><a href="{{ url("app.admin.movie.form.update", { "id" : movie.id }) }}" class="btn btn-info">{{ 'list.edit' | trans( {}, "forms") | capitalize }}</a></td>
+                    <td><a href="{{ url("app.admin.movie.delete", { "id" : movie.id }) }}" class="btn btn-danger">{{ 'list.delete' | trans( {}, "forms") | capitalize }}</a></td>
+                {% endif %}
+
+                <td><button class="btn addTobasket" data-id="{{ movie.id }}" data-price="{{ movie.price }}">{{ 'add' | trans ( {}, "basket")| capitalize }}</button></td>
+                <td><button class="btn removeFrombasket" data-id="{{ movie.id }}" data-price="{{ movie.price }}">{{ 'remove' | trans( {}, "basket") | capitalize }}</button></td>
+
+
             </tr>
         {% endfor %}
         </tbody>
@@ -83,4 +89,12 @@
 
 {% block stylesheets %}
 
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/basket.js') }}"></script>
+    <script>
+        let basket = new Basket();
+        basket.init("{{ url("app.basket.add",{ "id" : 999 }) }}","{{ url("app.basket.remove",{ "id" : 999 }) }}");
+    </script>
 {% endblock %}

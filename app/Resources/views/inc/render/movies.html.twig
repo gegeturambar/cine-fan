@@ -7,6 +7,7 @@
                 <th>{{ "movie.category" | trans | capitalize }}</th>
                 <th>{{ "movie.poster" | trans | capitalize }}</th>
                 <th>{{ "movie.actors" | trans | capitalize }}</th>
+                <th>{{ "movie.tags" | trans | capitalize }}</th>
                 <th>{{ 'movie.update' | trans | capitalize }}</th>
                 <th>{{ 'movie.delete' | trans | capitalize }}</th>
                 {% for mov in records %}
@@ -29,6 +30,11 @@
                         <td>
                             {% for act in mov.actors %}
                                 <p>{{ act.prenom ~ " " ~ act.nom }} </p>
+                            {% endfor %}
+                        </td>
+                        <td>
+                            {% for tag in mov.tags %}
+                                <p>{{ tag.slug | trans({}, 'tag') }} </p>
                             {% endfor %}
                         </td>
                         {% if is_granted('ROLE_ADMIN')  %}

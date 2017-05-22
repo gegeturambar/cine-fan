@@ -109,7 +109,7 @@ class Movie
 	/**
 	 * @ORM\Column(name="price", type="integer")
 	 */
-	private $price = false;
+	private $price = 0;
 
     /**
      * @var

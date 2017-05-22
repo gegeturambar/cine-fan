@@ -6,6 +6,7 @@ use AppBundle\Service\Subscriber\MovieFormSubscriber;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Security\Core\Authorization\AuthorizationChecker;
@@ -49,6 +50,7 @@ class MovieType extends AbstractType
 
 	    if($this->authorizationChecker->isGranted('ROLE_ADMIN')){
 		    $builder->add('published');
+		    $builder->add('price', NumberType::class);
 	    }
 
         //ajout d'un souscripteur

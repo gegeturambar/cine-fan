@@ -15,7 +15,7 @@
     <body>
         <div class="container">
             {%  include('inc/nav.html.twig') %}
-
+            {% include "basket/basket_price.html.twig" %}
             {#{{ 'now'|localizeddate('long', 'none') }}<br/>#} {# il faut télécharger l'extension de twig pour utiliser cette fonction #}
 
             {% if app.session.flashBag.has('success') %}

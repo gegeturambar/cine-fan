@@ -13,7 +13,7 @@ services:
 
     app.service.utils.translate:
                 class: AppBundle\Service\Utils\TranslateService
-                arguments: [ "@kernel" ]
+                arguments: [ "@kernel", "@translator.default", '@session' ]
 
     app.service.handler.actorhandler:
             class: AppBundle\Service\Handler\Actorhandler
@@ -54,7 +54,7 @@ services:
 
     app.service.listener.movie:
             class: AppBundle\Service\Listener\MovieListener
-            arguments: [ "@app.service.utils.slug", "@security.authorization_checker","%upload_dir%" ]
+            arguments: [ "@app.service.utils.slug", "@security.authorization_checker",'@request_stack', "@app.service.utils.translate", "%locales%", "%locale%","%locale_currency%","%upload_dir%" ]
             tags:
                 - { name: doctrine.orm.entity_listener}
 
@@ -87,7 +87,7 @@ services:
 
     app.services.twig:
         class: AppBundle\Service\Twig\FunctionExtension
-        arguments: [ '@twig','@request_stack','@router','@session','@doctrine','@app.services.basket','%locales%' ]
+        arguments: [ '@twig','@request_stack','@router','@session','@doctrine','@app.service.utils.translate','@app.services.basket','%locales%','%locale%', '%locale_currency%' ]
         tags:
             - { name: twig.extension }
 
@@ -99,7 +99,7 @@ services:
 
     app.form.type.tag:
             class: AppBundle\Form\TagType
-            arguments: ["@security.authorization_checker"]
+            arguments: ["@security.authorization_checker", "@translator.default"]
             tags:
                 - { name: form.type, alias: appbundle_tag }
 

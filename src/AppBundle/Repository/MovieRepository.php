@@ -136,4 +136,35 @@ class MovieRepository extends \Doctrine\ORM\EntityRepository
 
     }
 
+	public function getMoviesById($ids = array())
+	{
+		if(empty($ids))
+			return array();
+		$limit = 5;
+		$t = $this
+			->createQueryBuilder("movie")
+			->andWhere("movie.id IN (" . implode(',', $ids) . ")")
+			->orderBy('movie.releaseDate ')
+			->setMaxResults($limit)
+			->getQuery()
+			->getResult()
+		;
+		//dump($t); exit;
+
+		return $t;
+	}
+
+	public function getMoviesPriceById($ids = array()){
+		$limit = 5;
+		$t = $this
+			->createQueryBuilder("movie")
+			->select('movie.id, movie.price')
+			->andWhere("movie.id IN (" . implode(',', $ids) . ")")
+			->orderBy('movie.releaseDate ')
+			->setMaxResults($limit)
+			->getQuery()
+			->getResult()
+		;
+		return $t;
+	}
 }

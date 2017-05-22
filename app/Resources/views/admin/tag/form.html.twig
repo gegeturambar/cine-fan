@@ -18,11 +18,10 @@
     #}
     {{ form_start(form, { 'attr' : {'novalidate' : 'novalidate'} }) }}
 
-
-    {{ form_errors(form.name) }}
+    {{ form_errors(form.slug) }}
     <p>
-        {{ form_label(form.name, 'tag.name' | trans | title ~ ' : ') }}
-        {{ form_widget(form.name) }}
+        {{ form_label(form.slug, 'tag.name' | trans | title ~ ' : ') }}
+        {{ form_widget(form.slug) }}
     </p>
 
     {% if is_granted('ROLE_ADMIN') %}

@@ -73,6 +73,11 @@
     {% if is_granted('ROLE_ADMIN') %}
         <br>
         <p>
+            {{ form_label(form.price, 'movie.price' | trans | title ~ ' : ') }}
+            {{ form_widget(form.price) }}
+        </p>
+        <br>
+        <p>
             {{ form_label(form.published, 'movie.published' | trans | title ~ ' : ') }}
             {{ form_widget(form.published) }}
         </p>

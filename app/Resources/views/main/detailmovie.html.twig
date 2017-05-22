@@ -12,9 +12,14 @@
                 <label>{{ "movie.category" | trans }} : </label> {{ movie.category.name }}
             </p>
 
-            <p>
-                <label>{{ "movie.tags" | trans }} : </label> {{ movie.category.name }}
-            </p>
+            {% if movie.tags|length %}
+                <p>
+                    <label>{{ "movie.tags" | trans }} : </label>
+                        {% for tag in movie.tags %}
+                            {{ tag.slug | trans({}, 'tag') ~ " " }}
+                        {% endfor %}
+                </p>
+            {% endif %}
 
             <p>
                 <label>{{ "movie.price" | trans }} : </label> {{ movie.price }}

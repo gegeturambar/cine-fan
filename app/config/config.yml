@@ -8,10 +8,11 @@ imports:
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
     locale: fr
+    locale_currency: { currency: "EUR", currency_symbol: "€" }
     locales:
-        - { code: "fr", flag: "fr" }
-        - { code: "en", flag: "gb" }
-        - { code: "es", flag: "es" }
+        - { code: "fr", flag: "fr", currency: "EUR", currency_symbol: "€" }
+        - { code: "en", flag: "gb", currency: "USD", currency_symbol: "$" }
+        - { code: "es", flag: "es", currency: "EUR", currency_symbol: "€" }
     upload_dir: "upload/"
     pagination: 10
     email_admin: "joachim@pulsar-informatique.com"

@@ -71,21 +71,21 @@ class TagListener
 		$current = $this->request->getLocale();
 		// set the tag name in english, and translate
 
+		$translate_locale = $tag->getSlug();
 		if($current != $this->locale){
 			// translate in locale the name for the slug
-			$name = $this->translator->translate($tag->getName(),$this->locale,$current);
-			$tag->setName($name);
+			$translate_locale = $this->translator->translate($tag->getSlug(),$this->locale,$current);
 		}
 
-		$slug = $this->_generateSlug($tag->getName());
+		$slug = $this->_generateSlug($translate_locale);
 		$tag->setSlug($slug);
 
-		$this->translator->addTranslate('tag',$this->locale,$slug,$tag->getName());
+		$this->translator->addTranslate('tag',$this->locale,$slug,$translate_locale);
 
     	foreach($this->locales as $loc){
 			$code =$loc['code'];
     		if( $code != $this->locale ){
-			    $translation = $this->translator->translate($tag->getName(),$code,$this->locale);
+			    $translation = $this->translator->translate($translate_locale,$code,$this->locale);
 			    $this->translator->addTranslate('tag',$code,$slug,$translation);
 		    }
 	    }
