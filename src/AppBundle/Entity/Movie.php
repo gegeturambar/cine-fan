@@ -112,7 +112,6 @@ class Movie
 	private $price = 0;
 
     /**
-     * @var
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Category")
      * @ORM\JoinColumn(name="category_id", referencedColumnName="id")
      * * @Assert\NotBlank(message="La categorie doit être renseignée")
@@ -123,6 +122,28 @@ class Movie
      * @ORM\ManyToMany(targetEntity="Actor", mappedBy="movies")
      */
     private $actors;
+
+	/**
+	 * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaire", mappedBy="movie")
+	 */
+	private $commentaires;
+
+	/**
+	 * @return mixed
+	 */
+	public function getCommentaires()
+	{
+		return $this->commentaires;
+	}
+
+	/**
+	 * @param mixed $commentaires
+	 */
+	public function setCommentaires($commentaires)
+	{
+		$this->commentaires = $commentaires;
+	}
+
 
 	/**
 	 * @return mixed
@@ -307,6 +328,7 @@ class Movie
     {
         $this->actors = new \Doctrine\Common\Collections\ArrayCollection();
         $this->tags = new \Doctrine\Common\Collections\ArrayCollection();
+	    $this->commentaires = new \Doctrine\Common\Collections\ArrayCollection();
     }
 
     /**

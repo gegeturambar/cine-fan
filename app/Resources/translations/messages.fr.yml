@@ -48,6 +48,13 @@ tag:
             delete_fail: Le tag n'a pas été supprimé convenablement
             update: Le tag a bien été modifié
 
+commentaire:
+    commentaire: commentaire
+    submit: ajouter un commentaire
+    title_form_create: ajouter un commentaire
+    title_list: liste des commentaires
+    writtenby: écrit par
+
 movie:
     movie: Film
     title: Titre

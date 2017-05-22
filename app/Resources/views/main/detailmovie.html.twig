@@ -29,8 +29,40 @@
             <img width="300" height="300" src="/upload/movie/{{ movie.picture }}"/>
         </div>
     </div>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <button class="btn addTobasket" data-id="{{ movie.id }}" data-price="{{ movie.price }}">{{ 'add_to_basket' | trans( {} , 'basket') | capitalize }}</button>
 
+        <div>
+            <br>
+            <textarea id="commentaire_to_add"></textarea>
+            <br>
+            <button class="btn addTocommentaire" data-id="{{ movie.id }}" >{{ 'commentaire.submit' | trans( {} ) | capitalize }}</button>
+        </div>
+    {% endif %}
+    {% if movie.commentaires|length %}
+        <div id="list_commentaires">
+            <p>
+                <label>{{ "commentaire.title_list" | trans }} : </label>
+                {% for com in movie.commentaires %}
+                    <div class="commentaire">
+                        <p>
+                            <label>{{ "commentaire.writtenby" | trans }} : </label><span class="commentaire_author">{{ com.user.username }}</span>
+                        </p>
+                        <p class="commentaire_commentaire">{{ com.commentaire }}</p>
+                    </div>
+                {% endfor %}
+            </p>
+        </div>
+    {% endif %}
 
+{% endblock %}
+
+{% block javascripts %}
+    <script src="{{ asset('js/commentaire.js') }}"></script>
+    <script>
+        let commentaireList = new CommentaireList();
+        commentaireList.init("{{ url("app.commentaire.add",{ "id" : 999 }) }}");
+    </script>
 {% endblock %}
 
 {% block stylesheets %}

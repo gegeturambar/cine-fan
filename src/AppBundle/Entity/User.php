@@ -46,6 +46,12 @@ class User implements UserInterface, \Serializable
 	private $roles;
 
 	/**
+	 * @ORM\OneToMany(targetEntity="AppBundle\Entity\Commentaire", mappedBy="user")
+	 */
+	private $commentaires;
+
+
+	/**
 	 * @ORM\Column(name="last_connection", type="datetime", nullable=true)
 	 */
 	private $lastConnection;
@@ -53,8 +59,25 @@ class User implements UserInterface, \Serializable
 	public function __construct()
 	{
 		$this->isActive = true;
+		$this->commentaires = new \Doctrine\Common\Collections\ArrayCollection();
 		// may not be needed, see section on salt below
 		// $this->salt = md5(uniqid(null, true));
+	}
+
+	/**
+	 * @return mixed
+	 */
+	public function getCommentaires()
+	{
+		return $this->commentaires;
+	}
+
+	/**
+	 * @param mixed $commentaires
+	 */
+	public function setCommentaires($commentaires)
+	{
+		$this->commentaires = $commentaires;
 	}
 
 	public function getUsername()

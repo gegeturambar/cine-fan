@@ -42,6 +42,13 @@ tag:
             delete: The tag has been deleted succesfully
             delete_fail: The tag has not been deleted succesfully
             update: The tag has been modified succesfully
+
+commentaire:
+    commentaire: comment
+    submit: submit a comment
+    title_form_create: add a comment
+    title_list: comment's list
+    writtenby: written by
 movie:
     movie: movie
     title: Title

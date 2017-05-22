@@ -68,7 +68,7 @@
                     {{ movie.category.name }}
                 </td>
                 <td>
-                    {{ translate_price(movie.price) | raw }}
+                    {{ translate_price(movie.price) }}
                     {{ render_locale_currency(true) | raw }}
                 </td>
                 {% if is_granted('ROLE_ADMIN')  %}
