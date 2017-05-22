@@ -3,6 +3,7 @@
 namespace AppBundle\Command;
 
 
+use AppBundle\Repository\MovieRepository;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 
 use Symfony\Component\Console\Helper\DialogHelper;
@@ -32,9 +33,11 @@ class DiscountMoviesCommand extends ContainerAwareCommand
         $discount_rate = $discount_rate ? $discount_rate : 10;
         $doctrine = $this->getContainer()->get('doctrine');
         $em = $doctrine->getManager();
+
+        /* @var MovieRepository $rc */
         $rc = $doctrine->getRepository('AppBundle:Movie');
         $count = $rc->updateMoviesPrice($discount_rate);
-        $output->writeln("You have updated all movies, reducing these prices by $discount_rate % " );
+        $output->writeln("You have updated all movies, reducing those prices by $discount_rate % " );
     }
 
 

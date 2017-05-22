@@ -14,9 +14,25 @@ class MainController extends Controller
      */
     public function indexAction(Request $request)
     {
+    	$features = array(
+    		"Ajout des utilisateurs",
+    		"Ajout des Roles, avec les liens de menus et des foncitonnalités accessibles selon ces derniers",
+		    "Ajout d'un workflow permettant aux simples utilisateurs connectés d'entrer des contenus avec un statut published à false tandis que l'administrateur à quand à lui accès au statut",
+		    "Ajout du multilangue",
+		    "Conversion automatique des prix à l'insertion et au rendu, selon la locale choisi, avec appel à un webService de conversion en ligne",
+		    "Traduction automatique des tags en fonction de la locale choisi, avec également un appel à une autre api de traduction en ligne, il aurait été d'utiliser google Translate, mais pour un site de test, je me suis contenté de www.transltr.org",
+		    "Ajout des commentaires",
+		    "Ajout des Tags",
+		    "Ajout du panier",
+		    "Génération du pdf lorsque l'on finalise l'achat du parnier",
+		    "Commande permettant de supprimer tous les films ( app:movies:delete ) et de la commande discountMovies qui réduit de 10% par défaut le prix des films en base pour simplifier la vie de l'administrateur",
+		    "Ajout d'une possibilité de se connecter même avec une base de donnée vide, pour le test, grâce au système de chainage des providers ( avec admin / password pour un administrateur et bob / password pour un simple utilisateur )"
+	    );
+
         // replace this example code with whatever you need
         return $this->render('main/index.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.root_dir').'/..').DIRECTORY_SEPARATOR,
+	        'features' => $features
         ]);
     }
 

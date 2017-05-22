@@ -107,7 +107,7 @@ class Movie
 	}
 
 	/**
-	 * @ORM\Column(name="price", type="integer")
+	 * @ORM\Column(name="price", type="float")
 	 */
 	private $price = 0;
 

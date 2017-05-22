@@ -24,7 +24,6 @@ class DeleteMoviesCommand extends ContainerAwareCommand
             ->addArgument('year', InputArgument::REQUIRED,'minimum year')
             ->addOption('earlier','a',InputOption::VALUE_NONE,'delete movies earlier than the date given in input')
         ;
-
     }
 
     protected function execute(InputInterface $input, OutputInterface $output)

@@ -1,33 +1,40 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <h1>Pourquoi vous devriez me choisir</h1>
+    <h1>Liste des fonctionnalités</h1>
+    <ul class="list-group">
+        {% set count = 1 %}
+        {% for feature in features %}
+            <li class="list-group-item">{{ feature }}<span class="badge">{{ count }}</span></li>
+            {% set count = count + 1 %}
+        {% endfor %}
+    </ul>
 
-
+    <h1>Pourquoi vous devriez me choisir (2)</h1>
     <ul class="list-group">
         <li class="list-group-item">Parce que je suis super motivé pour ce job <span class="badge">1</span></li>
-        <li class="list-group-item">Parce que j'ai été super rapide à faire ce test, malgré la formation que je donne et qui me donne une super charge de travail <span class="badge">2</span></li>
+        <li class="list-group-item">Parce que j'ai été super rapide à faire ce test, et que j'ai passé 2 nuits dessus (les logs git ne mentent pas,...)<span class="badge">2</span></li>
         <li class="list-group-item">Parce que j'apprends vite <span class="badge">3</span></li>
-        <li class="list-group-item">Parce que je CODE vite  <span class="badge">4</span></li>
+        <li class="list-group-item">Parce que je code (un peu moins ) vite  <span class="badge">4</span></li>
         <li class="list-group-item">Parce que j'ai la patate  <span class="badge">5</span></li>
         <li class="list-group-item">Parce que j'arrive tous les jours à 8h30-9h00 et que je ne pars jamais
             avant 18h00 (sauf le vendredi peut-être ?)  <span class="badge">6</span></li>
-        <li class="list-group-item">Parce que j'ai pris un grand plaisir à faire ce test  <span class="badge">7</span></li>
+        <li class="list-group-item">Parce que j'ai pris un grand plaisir à faire ce test (si, si, avec des webs services et tout,...) <span class="badge">7</span></li>
         <li class="list-group-item">Parce que je ne suis clairement pas le meilleur dev qui existe, mais je suis sérieux
-            et je sais me débrouiller  <span class="badge">8</span></li>
-        <li class="list-group-item">Parce que j'ai utilisé tout plein de services et d'injections pour faire ce test  <span class="badge">9</span></li>
-        <li class="list-group-item">Parce que mon rêve a toujours été d'intégrer un grand groupe d'assurance ( ??? )  <span class="badge">10</span></li>
-        <li class="list-group-item">Parce que je n'ai pas hésité à sacrifier tout mon dimanche pour faire ce mini-site  <span class="badge">11</span></li>
-        <li class="list-group-item">Parce que je donne des formations PHP objet à des classes entières, ce qui signifie que je sais m'exprimer
-            (et puis, ça fait rudemment bien sur le CV)  <span class="badge">12</span></li>
+            et je sais me débrouiller ( je coche aussi ) <span class="badge">8</span></li>
+        <li class="list-group-item">Parce que j'ai utilisé tout plein de services et d'injections pour faire ce test (également, mais je dois reconnaître que le template Symfony pousse vraiment aux bonnes pratiques, même si je ferais bien une petite refacto si j'avais le temps pour la translation notamment, avec une classe de base qui gère la translation au niveau du FormType ) <span class="badge">9</span></li>
+        <li class="list-group-item">Parce que mon rêve a toujours été d'intégrer un grand groupe d'assurance ( ??? ) <=== je vais ajouter des "?", pas que je n'apprécie pas les assurances en elle-même, mais je suis plus intéressé par la possibilité de réaliser des projets techniques dans un grand groupe,...)  <span class="badge">10</span></li>
+        <li class="list-group-item">Parce que je n'ai pas hésité à sacrifier tout mon dimanche pour <s>faire</s> améliorer ce mini-site <span class="badge">11</span></li>
+        <li class="list-group-item">Parce que je donne des formations <s>PHP objet</s> Seblod à des classes entières ( bon, d'accord, c'est moins bien, mais c'est pas mal non plus,...)  <span class="badge">12</span></li>
         <li class="list-group-item">Parce que je suis toujours à 100% sur ce que je fais  <span class="badge">13</span></li>
-        <li class="list-group-item">Parce que je ne prends pas trop de place  <span class="badge">14</span></li>
-        <li class="list-group-item">Parce que j'ai un caractère sociable et un bon esprit d'équipe  <span class="badge">15</span></li>
-        <li class="list-group-item">Parce que je ne fais pas trop de fautes d'aurtaugraffe  <span class="badge">16</span></li>
-        <li class="list-group-item">Parce que je n'hésite pas à bosser de la maison le soir pour terminer mon travail à l'heure  <span class="badge">17</span></li>
-        <li class="list-group-item">Parce que j'aime beaucoup redmine, symfony, zend framework, joomla et même spip (non, pas spip, c'est pas vrai)  <span class="badge">18</span></li>
-        <li class="list-group-item">Parce que manifestement, je suis plutôt à l'aise avec Bootstrap  <span class="badge">19</span></li>
-        <li class="list-group-item">Parce que pas tout le monde ne trouve 20 raisons pour se faire embaucher :)  <span class="badge">20</span></li>
+        <li class="list-group-item">Parce que je ne prends <b>ENCORE MOINS</b> de place <span class="badge">14</span></li>
+        <li class="list-group-item">Parce que j'ai un caractère sociable et un bon esprit d'équipe <span style="font-size:80%;">( et que je sais préparer le café )</span> <span class="badge">15</span></li>
+        <li class="list-group-item">Parce que je ne fais pas trop de fautes et que je n'écris jamais en sms !  <span class="badge">16</span></li>
+        <li class="list-group-item">Parce que je n'hésite pas à travailler de la maison le soir pour terminer mon travail à l'heure  <span class="badge">17</span></li>
+        <li class="list-group-item">Parce que j'aime beaucoup redmine, symfony, zend framework, les shells, linux, joomla, etc.<span class="badge">18</span></li>
+        <li class="list-group-item">Parce que je sais me débrouiller avec linux, utiliser la ligne de commande, installer une lamp ( pas celle avec l'ampoule hein,...)  <span class="badge">19</span></li>
+        <li class="list-group-item">Parce qu'au travail j'évite de faire l'humour de la ligne du dessus, <span style="font-size:70%;">je m'excuse,...</span>  <span class="badge">20</span></li>
+        <li class="list-group-item">Parce que pas tout le monde ne trouve 21 raisons pour se faire embaucher :)  <span class="badge">21</span></li>
 
     </ul>
 

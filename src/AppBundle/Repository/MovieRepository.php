@@ -1,6 +1,7 @@
 <?php
 
 namespace AppBundle\Repository;
+use Doctrine\ORM\Query;
 
 /**
  * MovieRepository
@@ -166,5 +167,32 @@ class MovieRepository extends \Doctrine\ORM\EntityRepository
 			->getResult()
 		;
 		return $t;
+	}
+
+	public function updateMoviesPrice($discount_rate){
+
+		$prices = $this
+			->createQueryBuilder("movie")
+			->select( 'DISTINCT(movie.price) AS price')
+			->getQuery()
+			->getResult(Query::HYDRATE_OBJECT);
+
+		foreach($prices as $key => $price){
+			$price = $price['price'];
+			if($price > 0 )
+			{
+				$new_price = $price - ($price * $discount_rate / 100);
+
+				$t         = $this
+					->createQueryBuilder("movie")
+					->update()
+					->set('movie.price', $new_price)
+					->where(' movie.price = :oldprice')
+					->setParameter("oldprice", $price)
+					->getQuery();
+				;
+				$t->execute();
+			}
+		}
 	}
 }
