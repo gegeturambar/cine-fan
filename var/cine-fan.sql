@@ -1,156 +1,339 @@
--- phpMyAdmin SQL Dump
--- version 4.6.4
--- https://www.phpmyadmin.net/
+-- MySQL dump 10.13  Distrib 5.5.54, for debian-linux-gnu (x86_64)
 --
--- Client :  127.0.0.1
--- Généré le :  Dim 12 Février 2017 à 16:17
--- Version du serveur :  5.7.14
--- Version de PHP :  5.6.25
-
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
-
+-- Host: localhost    Database: cine-fan
+-- ------------------------------------------------------
+-- Server version	5.5.54-0+deb8u1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
 /*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Base de données :  `cine-fan`
---
-CREATE DATABASE IF NOT EXISTS `cine-fan` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `cine-fan`;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `category`
+-- Table structure for table `actor`
 --
 
+DROP TABLE IF EXISTS `actor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `actor` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `prenom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `nom` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `alias` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `date_naissance` date NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `actor`
+--
+
+LOCK TABLES `actor` WRITE;
+/*!40000 ALTER TABLE `actor` DISABLE KEYS */;
+INSERT INTO `actor` VALUES (1,'ford','harisson','harisson','2963495ef80f243687644e658fa794a5.jpg','1897-01-01',1),(2,'Mark','Hamill','hamill','396c473565fb6c1cd7500ae6dbecfde7.jpg','1912-01-01',1);
+/*!40000 ALTER TABLE `actor` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `actors_movies`
+--
+
+DROP TABLE IF EXISTS `actors_movies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `actors_movies` (
+  `actor_id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL,
+  PRIMARY KEY (`actor_id`,`movie_id`),
+  KEY `IDX_B3012DC010DAF24A` (`actor_id`),
+  KEY `IDX_B3012DC08F93B6FC` (`movie_id`),
+  CONSTRAINT `FK_B3012DC08F93B6FC` FOREIGN KEY (`movie_id`) REFERENCES `movie` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_B3012DC010DAF24A` FOREIGN KEY (`actor_id`) REFERENCES `actor` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `actors_movies`
+--
+
+LOCK TABLES `actors_movies` WRITE;
+/*!40000 ALTER TABLE `actors_movies` DISABLE KEYS */;
+INSERT INTO `actors_movies` VALUES (1,1),(2,1),(2,14);
+/*!40000 ALTER TABLE `actors_movies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `category`
+--
+
+DROP TABLE IF EXISTS `category`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `category` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_64C19C1989D9B62` (`slug`),
+  KEY `cle_index_sur_titre_film` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Contenu de la table `category`
+-- Dumping data for table `category`
 --
 
-INSERT INTO `category` (`id`, `name`, `slug`) VALUES
-(1, 'Action', 'action'),
-(4, 'Comédie', 'comedie'),
-(5, 'Far-west', 'farwest'),
-(12, 'Drame', 'drame');
-
--- --------------------------------------------------------
+LOCK TABLES `category` WRITE;
+/*!40000 ALTER TABLE `category` DISABLE KEYS */;
+INSERT INTO `category` VALUES (1,'Western','western',1),(2,'Romantique','romantique',1);
+/*!40000 ALTER TABLE `category` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Structure de la table `compteur`
+-- Table structure for table `commentaire`
 --
 
+DROP TABLE IF EXISTS `commentaire`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `commentaire` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `movie_id` int(11) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `commentaire` longtext COLLATE utf8_unicode_ci NOT NULL,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_67F068BC989D9B62` (`slug`),
+  KEY `IDX_67F068BC8F93B6FC` (`movie_id`),
+  KEY `IDX_67F068BCA76ED395` (`user_id`),
+  CONSTRAINT `FK_67F068BCA76ED395` FOREIGN KEY (`user_id`) REFERENCES `user` (`id`),
+  CONSTRAINT `FK_67F068BC8F93B6FC` FOREIGN KEY (`movie_id`) REFERENCES `movie` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `commentaire`
+--
+
+LOCK TABLES `commentaire` WRITE;
+/*!40000 ALTER TABLE `commentaire` DISABLE KEYS */;
+INSERT INTO `commentaire` VALUES (1,1,6,'test','61495443957',1),(2,1,6,'another comment','61495444113',1),(3,1,6,'dzadza','61495444415',1),(4,1,6,'tagazog','61495444463',1),(5,1,6,'something','61495444492',1),(6,1,6,'whatever','61495444658',1),(7,1,6,'something works ?','61495444757',1);
+/*!40000 ALTER TABLE `commentaire` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `compteur`
+--
+
+DROP TABLE IF EXISTS `compteur`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `compteur` (
-  `id` int(11) NOT NULL,
-  `compteur` smallint(6) NOT NULL
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `compteur` smallint(6) NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Contenu de la table `compteur`
+-- Dumping data for table `compteur`
 --
 
-INSERT INTO `compteur` (`id`, `compteur`) VALUES
-(1, 11);
-
--- --------------------------------------------------------
+LOCK TABLES `compteur` WRITE;
+/*!40000 ALTER TABLE `compteur` DISABLE KEYS */;
+/*!40000 ALTER TABLE `compteur` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Structure de la table `movie`
+-- Table structure for table `movie`
 --
 
+DROP TABLE IF EXISTS `movie`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `movie` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `category_id` int(11) DEFAULT NULL,
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8_unicode_ci NOT NULL,
   `picture` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `release_date` date NOT NULL
+  `release_date` date NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  `price` double NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_1D5EF26F989D9B62` (`slug`),
+  UNIQUE KEY `UNIQ_1D5EF26F2B36786BE769876D` (`title`,`release_date`),
+  KEY `IDX_1D5EF26F12469DE2` (`category_id`),
+  CONSTRAINT `FK_1D5EF26F12469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `movie`
+--
+
+LOCK TABLES `movie` WRITE;
+/*!40000 ALTER TABLE `movie` DISABLE KEYS */;
+INSERT INTO `movie` VALUES (1,1,'Star Wars','star-wars','Super film','ffb7db5a75be513666eb83e35dc839f2.jpg','1897-01-01',1,3.6),(14,2,'Autant en emporte le vent','autant-en-emporte-le-vent','Un film,...','04666ccf2037cd7745314e9f8cf063e7.jpg','1897-01-01',1,0);
+/*!40000 ALTER TABLE `movie` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `places`
+--
+
+DROP TABLE IF EXISTS `places`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `places` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `address` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Contenu de la table `movie`
+-- Dumping data for table `places`
 --
 
-INSERT INTO `movie` (`id`, `category_id`, `title`, `slug`, `description`, `picture`, `release_date`) VALUES
-(1, 1, 'Ben Hur', 'ben-hur', 'Film douze fois oscarisé', 'c59ef8e34c7a9d4d84e2c6069161e3a0.jpg', '1959-04-15'),
-(2, 1, 'Saw', 'saw', 'genial', '39c7c061a320cdfb75cb5aeee1a1dc1a.jpg', '2004-01-01'),
-(4, 1, 'Histoire vraie', 'histoire-vraie', 'L\'histoire d\'un vieux qui fait 400 kilomètres sur sa tondeuse à gazon pour retrouver son frère...', '81bd8c03b46a10364925fe7c1110c555.jpg', '1999-01-01'),
-(5, 5, 'Mud', 'mud', 'un bateau retrouvé dans les arbres qui semble habité par un inconnu...', 'fde024cf2d77a8620c1ead96993a72e1.jpg', '2012-01-01'),
-(7, 1, 'Lost in translation', 'lost-in-translation', 'Bill Murray for ever !', 'c242b5b61a81cef2c7069d07549aefbe.jpg', '2003-01-01'),
-(8, 1, 'The pledge', 'the-pledge', 'Nickolson au top !', '6f7e5b921c48e1f61206af0f78d82405.jpg', '2001-01-01'),
-(9, 1, 'Little miss sunshine', 'little-miss-sunshine', 'Film géant', 'def37c01fb1299d6e8f2ae8c55544700.jpg', '2006-01-01'),
-(10, 4, 'Les lumières de la ville', 'les-lumieres-de-la-ville', 'Un des meilleurs Charlot', 'dd9e8f2e9a88ab99d98db3af7773be75.jpg', '1935-01-01'),
-(11, 12, 'Le professionnel', 'le-professionnel', 'Belmondo \\o/', '4dd763a8b2877dfd1059cf079846b994.jpg', '1981-08-15'),
-(12, 4, 'Le magnifique', 'le-magnifique', 'le meilleur des Belmondo, avec l\'infâme Karpoff !', '7dafb825641e9d8f63f0720f5bd28336.jpg', '1983-01-01'),
-(14, 4, 'Retour vers le futur', 'retour-vers-le-futur', 'Un classique indémodable', '5bea451de7c046477b6f417b989f8a1b.jpg', '1985-10-14');
+LOCK TABLES `places` WRITE;
+/*!40000 ALTER TABLE `places` DISABLE KEYS */;
+/*!40000 ALTER TABLE `places` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Index pour les tables exportées
+-- Table structure for table `role`
 --
 
---
--- Index pour la table `category`
---
-ALTER TABLE `category`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `UNIQ_64C19C1989D9B62` (`slug`),
-  ADD KEY `cle_index_sur_titre_film` (`name`);
+DROP TABLE IF EXISTS `role`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `role` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_57698A6A5E237E06` (`name`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Index pour la table `compteur`
---
-ALTER TABLE `compteur`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `movie`
---
-ALTER TABLE `movie`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `UNIQ_1D5EF26F989D9B62` (`slug`),
-  ADD UNIQUE KEY `UNIQ_1D5EF26F2B36786BE769876D` (`title`,`release_date`),
-  ADD KEY `IDX_1D5EF26F12469DE2` (`category_id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
+-- Dumping data for table `role`
 --
 
---
--- AUTO_INCREMENT pour la table `category`
---
-ALTER TABLE `category`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
---
--- AUTO_INCREMENT pour la table `compteur`
---
-ALTER TABLE `compteur`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
---
--- AUTO_INCREMENT pour la table `movie`
---
-ALTER TABLE `movie`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
---
--- Contraintes pour les tables exportées
---
+LOCK TABLES `role` WRITE;
+/*!40000 ALTER TABLE `role` DISABLE KEYS */;
+INSERT INTO `role` VALUES (1,'ROLE_ADMIN'),(2,'ROLE_USER');
+/*!40000 ALTER TABLE `role` ENABLE KEYS */;
+UNLOCK TABLES;
 
 --
--- Contraintes pour la table `movie`
+-- Table structure for table `tag`
 --
-ALTER TABLE `movie`
-  ADD CONSTRAINT `FK_1D5EF26F12469DE2` FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);
 
+DROP TABLE IF EXISTS `tag`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tag` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `slug` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `published` tinyint(1) NOT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_389B783989D9B62` (`slug`)
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tag`
+--
+
+LOCK TABLES `tag` WRITE;
+/*!40000 ALTER TABLE `tag` DISABLE KEYS */;
+INSERT INTO `tag` VALUES (2,'humour',1),(9,'cruaute',1),(10,'guerre',1);
+/*!40000 ALTER TABLE `tag` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `tags_movies`
+--
+
+DROP TABLE IF EXISTS `tags_movies`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `tags_movies` (
+  `tag_id` int(11) NOT NULL,
+  `movie_id` int(11) NOT NULL,
+  PRIMARY KEY (`movie_id`,`tag_id`),
+  KEY `IDX_A3C55000BAD26311` (`tag_id`),
+  KEY `IDX_A3C550008F93B6FC` (`movie_id`),
+  CONSTRAINT `FK_A3C550008F93B6FC` FOREIGN KEY (`movie_id`) REFERENCES `movie` (`id`) ON DELETE CASCADE,
+  CONSTRAINT `FK_A3C55000BAD26311` FOREIGN KEY (`tag_id`) REFERENCES `tag` (`id`) ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `tags_movies`
+--
+
+LOCK TABLES `tags_movies` WRITE;
+/*!40000 ALTER TABLE `tags_movies` DISABLE KEYS */;
+INSERT INTO `tags_movies` VALUES (2,1),(9,1);
+/*!40000 ALTER TABLE `tags_movies` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `user`
+--
+
+DROP TABLE IF EXISTS `user`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `roles` int(11) DEFAULT NULL,
+  `username` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
+  `password` varchar(64) COLLATE utf8_unicode_ci NOT NULL,
+  `email` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `is_active` tinyint(1) NOT NULL,
+  `last_connection` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `UNIQ_8D93D649F85E0677` (`username`),
+  UNIQUE KEY `UNIQ_8D93D649E7927C74` (`email`),
+  KEY `IDX_8D93D649B63E2EC7` (`roles`),
+  CONSTRAINT `FK_8D93D649B63E2EC7` FOREIGN KEY (`roles`) REFERENCES `role` (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `user`
+--
+
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (2,2,'gege','$2y$12$aHFHeNOLs3isD0I8I2vxo.mOIOY.zwC/dpWBJzUlLtWFNIyzUfX0q','bobby@gmail.com',1,NULL),(6,1,'bob','$2y$12$v72pQdvoOFmTF54Yl0zUdOqzUMImCZWZpmx6FkqCXRte8m0m1WeZ2','bob@gmail.com',1,NULL);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2017-05-23 11:06:36
