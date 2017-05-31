@@ -47,6 +47,7 @@ let CommentaireList = function(){
         newcom.querySelector(".commentaire_author").textContent = data.user;
         newcom.querySelector(".commentaire_commentaire").textContent = data.commentaire;
         list.appendChild(newcom);
+        document.querySelector('#commentaire_to_add').value = "";
     }
 
 }

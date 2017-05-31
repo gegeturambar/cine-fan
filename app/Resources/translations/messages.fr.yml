@@ -77,6 +77,8 @@ movie:
     title_create: Créer un film
     title_form_create: Formulaire d'ajout de film
     title_form_update: Formulaire d'édition de film
+    no_rate: ce film n'a pas encore été noté
+    global_rate: note moyenne de ce film
     flash_messages:
         add: Le film a bien été ajouté
         add_fail: Le film n'a pas été ajouté convenablement
@@ -119,6 +121,8 @@ user:
   title_update: Editer un utilisateur
   title_create: Créer un utilisateur
   title_create_own: Inscription
+  title_your_rate_movie: votre note
+  title_rate_movie: notez ce film
   flash_messages:
           add: "L'utilisateur a bien été ajouté"
           delete: "L'utilisateur a bien été supprimé"

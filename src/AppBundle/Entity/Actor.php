@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Actor
@@ -10,6 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="actor")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ActorRepository")
  * @ORM\EntityListeners({"AppBundle\Service\Listener\ActorListener"})
+ * @UniqueEntity(
+ *     fields= {"nom", "prenom", "dateNaissance"},
+ *     message = "This actor already exists in our database"
+ * )
+ *
  */
 class Actor
 {

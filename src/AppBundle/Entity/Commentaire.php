@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Commentaire
@@ -11,6 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="commentaire")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\CommentaireRepository")
  * @ORM\EntityListeners({"AppBundle\Service\Listener\CommentaireListener"})
+ *
  */
 class Commentaire
 {

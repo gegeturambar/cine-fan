@@ -71,6 +71,8 @@ movie:
     title_create: Create a movie
     title_form_create: movie add Form
     title_form_update: movie update Form
+    no_rate: this movie has no rate yet
+    global_rate: global rate of this movie
     flash_messages:
             add: The movie has been added succesfully
             add_fail: The movie has not been added succesfully
@@ -114,6 +116,8 @@ user:
   title_update: Update a user
   title_create: Create a user
   title_create_own: Inscription
+  title_your_rate_movie: your rate
+  title_rate_movie: rate this movie
   flash_messages:
              add: The user has been added succesfully
              delete: The user has been deleted succesfully

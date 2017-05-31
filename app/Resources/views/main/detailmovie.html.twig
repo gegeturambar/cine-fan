@@ -24,10 +24,28 @@
             <p>
                 <label>{{ "movie.price" | trans }} : </label> {{ translate_price(movie.price) ~ " " ~ render_locale_currency(true) }}
             </p>
+            {% if movie.globalNote is not null  %}
+                <span>{{ "movie.global_rate" | trans }}</span>
+                <ul class="c-rating" id="global_note">
+                </ul>
+            {% else %}
+                <span>{{ "movie.no_rate" | trans }}</span>
+                <br>
+            {% endif %}
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                {% if user_note is not null  %}
+                    <span>{{ "user.title_your_rate_movie" | trans }} :</span>
+                {% else %}
+                    <span>{{ "user.title_rate_movie" | trans }} :</span>
+                {% endif %}
+                <ul class="c-rating" id="user_note">
+                </ul>
+            {% endif %}
         </div>
         <div class="col-lg-3">
             <img width="300" height="300" src="/upload/movie/{{ movie.picture }}"/>
         </div>
+
     </div>
     {% if is_granted('IS_AUTHENTICATED_FULLY') %}
         <button class="btn addTobasket" data-id="{{ movie.id }}" data-price="{{ movie.price }}">{{ 'add_to_basket' | trans( {} , 'basket') | capitalize }}</button>
@@ -54,17 +72,46 @@
             </p>
         </div>
     {% endif %}
-
 {% endblock %}
+
 
 {% block javascripts %}
     <script src="{{ asset('js/commentaire.js') }}"></script>
+    <script src="{{ asset('js/rating.js') }}"></script>
+    <script src="{{ asset('js/rating_movie.js') }}"></script>
     <script>
-        let commentaireList = new CommentaireList();
-        commentaireList.init("{{ url("app.commentaire.add",{ "id" : 999 }) }}");
+        let maxRating = 5;
+        {% if movie.globalNote is not null  %}
+            let globalRate = new RateMovie();
+            currentRating = {{ movie.globalNote }};
+            globalRate = globalRate.init("global_note",currentRating,maxRating,{{ movie.id }},"");
+            globalRate.detachEvents();
+        {% endif %}
+
+        {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+            let userRate = new RateMovie();
+            let url = "";
+            {% if user_note is not null  %}
+                currentRating = {{ user_note.value }};
+                userRate = userRate.init("user_note",currentRating,maxRating,{{ movie.id }},url);
+                userRate.detachEvents();
+            {% else %}
+                currentRating = "";
+                url = "{{ url("app.note.add") }}";
+                userRate.init("user_note",currentRating,maxRating,{{ movie.id }},url);
+            {% endif %}
+
+        {% endif %}
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function(event) {
+            let commentaireList = new CommentaireList();
+            commentaireList.init("{{ url("app.commentaire.add",{ "id" : 999 }) }}");
+        });
     </script>
 {% endblock %}
 
 {% block stylesheets %}
-
+    <link rel="stylesheet" href="{{ asset('css/rating.min.css') }}">
 {% endblock %}

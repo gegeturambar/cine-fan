@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Entity\Note;
 use AppBundle\Form\MovieSearchType;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -123,11 +124,19 @@ class MainController extends Controller
         $doctrine = $this->getDoctrine();
         $rc = $doctrine->getRepository('AppBundle:Movie');
 
+	    $movie = $rc->find($id);
 
+	    $params = [
+	    	'movie' =>  $movie
+	    ];
 
+	    if($this->get('security.authorization_checker')->isGranted('IS_AUTHENTICATED_FULLY')){
+		    $rcNote = $doctrine->getRepository('AppBundle:Note');
+		    $rcUser = $doctrine->getRepository('AppBundle:User');
+		    $user_note = $rcNote->findOneBy(array('user'=>$rcUser->findOneBy(['username'=> $this->getUser()->getUsername() ]),'movie'=>$movie));
+		    $params['user_note'] = $user_note;
+	    }
         // replace this example code with whatever you need
-        return $this->render('main/detailmovie.html.twig', [
-            'movie' => $rc->find($id)
-        ]);
+        return $this->render('main/detailmovie.html.twig', $params);
     }
 }

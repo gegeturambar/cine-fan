@@ -41,7 +41,7 @@ security:
             logout:
                 path:   app.security.logout
                 target: app.homepage.index
-                invalidate_session: false
+                invalidate_session: true
 
             # activate different ways to authenticate
 

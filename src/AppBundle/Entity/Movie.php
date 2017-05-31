@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Movie
@@ -11,6 +12,11 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table(name="movie", uniqueConstraints={ @ORM\UniqueConstraint(columns={"title", "release_date"})})
  * @ORM\Entity(repositoryClass="AppBundle\Repository\MovieRepository")
  * @ORM\EntityListeners({"AppBundle\Service\Listener\MovieListener"})
+ * @UniqueEntity(
+ *     fields= {"releaseDate", "title"},
+ *     message = "This movie already exists in our database"
+ * )
+ *
  */
 class Movie
 {
@@ -142,6 +148,43 @@ class Movie
 	public function setCommentaires($commentaires)
 	{
 		$this->commentaires = $commentaires;
+	}
+
+	/**
+	 * @ORM\OneToMany(targetEntity="AppBundle\Entity\Note", mappedBy="movie")
+	 */
+	private $notes;
+
+	/**
+	 * @return mixed
+	 */
+	public function getNotes()
+	{
+		return $this->notes;
+	}
+
+	/**
+	 * @param mixed $notes
+	 */
+	public function setNotes($notes)
+	{
+		$this->notes = $notes;
+	}
+
+	public function getGlobalNote(){
+		if(!count($this->notes))
+			return null;
+
+		$concatNote = 0;
+
+		/**
+		 * @var Note $note
+		 */
+		foreach ($this->notes as $note){
+			$concatNote += $note->getValue();
+		}
+		return $concatNote / count($this->notes);
+
 	}
 
 

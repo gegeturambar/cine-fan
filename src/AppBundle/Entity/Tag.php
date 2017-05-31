@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
 
 /**
  * Tag
@@ -10,6 +11,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="tag")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\TagRepository")
  * @ORM\EntityListeners({"AppBundle\Service\Listener\TagListener"})
+ * @UniqueEntity(
+ *     fields= {"slug"},
+ *     message = "This Tag already exists in our database"
+ * )
+ *
  */
 class Tag
 {
